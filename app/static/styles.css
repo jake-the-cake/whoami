@@ -1,0 +1,146 @@
+:root {
+    --teal-hue: 180;
+    --magenta-hue: 300;
+    --yellow-hue: 60;
+
+    --teal-sat: 100%;
+    --magenta-sat: 100%;
+    --yellow-sat: 100%;
+
+    --teal: hsl(var(--teal-hue), var(--teal-sat), 35%);
+    --magenta: hsl(var(--magenta-hue), var(--magenta-sat), 50%);
+    --yellow: hsl(var(--yellow-hue), var(--yellow-sat), 50%);
+
+    --teal-dim: hsl(var(--teal-hue), var(--teal-sat), 35%, .8);
+    --magenta-dim: hsl(var(--magenta-hue), var(--magenta-sat), 50%, .8);
+    --yellow-dim: hsl(var(--yellow-hue), var(--yellow-sat), 50%, .8);
+
+    --teal-half: hsl(var(--teal-hue), var(--teal-sat), 35%, .5);
+    --magenta-half: hsl(var(--magenta-hue), var(--magenta-sat), 50%, .5);
+    --yellow-half: hsl(var(--yellow-hue), var(--yellow-sat), 50%, .5);
+
+    --teal-trans: hsl(var(--teal-hue), var(--teal-sat), 35%, .2);
+    --magenta-trans: hsl(var(--magenta-hue), var(--magenta-sat), 50%, .2);
+    --yellow-trans: hsl(var(--yellow-hue), var(--yellow-sat), 50%, .2);
+
+    --shadow: 4px 4px 0 var(--yellow-dim);
+    --shadow-light: 4px 4px 0 var(--yellow-trans);
+
+    --light: hsl(0, 0%, 95%);
+    --light-trans: hsl(0, 0%, 95%, .2);
+    --light-half: hsl(0, 0%, 95%, .5);
+    --light-dim: hsl(0, 0%, 95%, .8);
+}
+
+body {
+    background: linear-gradient(135deg, var(--teal), var(--magenta), var(--yellow));
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.hero {
+    text-align: center;
+    padding: 2rem;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    text-shadow: var(--shadow-light);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin: 0 auto 2rem;
+    width: 75%;
+    max-width: 600px;
+    padding: 1rem;
+    background-color: var(--light-trans);
+}
+
+.section {
+    --mainbg: var(--teal);
+    --topbg: var(--magenta);
+    --botbg: var(--yellow);
+    --topborder: var(--magenta-trans);
+    --botborder: var(--yellow-trans);
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    border-top: 4px solid var(--topborder);
+    border-bottom: 4px solid var(--botborder);
+}
+
+.section::before {
+    content: '';
+    background: linear-gradient(135deg, var(--topbg), var(--botbg));
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0; left: 0;
+    z-index: 1;
+}
+
+.section::after {
+    content: '';
+    background-color: var(--mainbg);
+    width: 120%;
+    height: 100%;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0;
+    rotate: -1deg;
+    z-index: 2;
+}
+
+.section-content {
+    z-index: 3;
+    position: relative;
+}
+
+.button {
+    --bgcolor: var(--magenta-dim);
+    --accentcolor: var(--yellow-dim);
+    --hovercolor: var(--teal);
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--accentcolor);
+    background-color: var(--bgcolor);
+    padding: 0.5rem 2rem;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    box-shadow: 4px 4px 0 var(--accentcolor);
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.button:hover {
+    transform: translateY(-5px);
+    box-shadow: 6px 6px 0 var(--accentcolor);
+    background-color: var(--hovercolor);
+}
+
+.btn-teal {
+    --bgcolor: var(--teal-dim);
+    --accentcolor: var(--magenta-dim);
+    --hovercolor: var(--yellow);
+}
+
+.btn-yellow {
+    --bgcolor: var(--yellow-dim);
+    --accentcolor: var(--teal-dim);
+    --hovercolor: var(--magenta);
+}

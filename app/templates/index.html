@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>90s Portfolio</title>
+    <style>
+        :root {
+            --teal: #008080;
+            --magenta: #FF00FF;
+            --yellow: #FFFF00;
+            --background: linear-gradient(135deg, var(--teal), var(--magenta), var(--yellow));
+            --font-family: 'Verdana', sans-serif;
+            --shadow: 4px 4px 0 var(--magenta);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: var(--background);
+            font-family: var(--font-family);
+            color: #000;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: var(--yellow);
+            color: var(--teal);
+            text-align: center;
+            padding: 1rem 0;
+            font-size: 2rem;
+            font-weight: bold;
+            text-shadow: var(--shadow);
+            border-bottom: 5px solid var(--magenta);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--magenta);
+            font-size: 1.2rem;
+            font-weight: bold;
+            background: var(--teal);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        nav a:hover {
+            transform: translateY(-5px);
+            box-shadow: 6px 6px 0 var(--yellow);
+        }
+
+        main {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        main h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: var(--shadow);
+        }
+
+        main p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .button {
+            display: inline-block;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--teal);
+            background: var(--yellow);
+            padding: 0.5rem 2rem;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .button:hover {
+            transform: translateY(-5px);
+            box-shadow: 6px 6px 0 var(--magenta);
+        }
+
+        footer {
+            background: var(--teal);
+            color: var(--yellow);
+            text-align: center;
+            padding: 1rem;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -4px 5px var(--magenta);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    My 90s Portfolio
+</header>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<main>
+    <h1>Welcome to My Portfolio</h1>
+    <p>Experience the vibrant energy of the 90s as you explore my professional journey and creative projects. 
+    Let’s bring back the nostalgia while keeping things modern!</p>
+    <a href="#projects" class="button">View My Work</a>
+</main>
+
+<footer>
+    &copy; 2025 My 90s Portfolio | All Rights Reserved
+</footer>
+
+</body>
+</html>
+

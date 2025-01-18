@@ -9,8 +9,9 @@ bcrypt = Bcrypt()
 csrf = CSRFProtect()
 
 def create_app():
+    if os.environ.get('SECRET_KEY', None) == 'None':
+        raise SystemError('SECRET_KEY required')
     app = Flask(__name__)
-    print(os.environ.get('SECRET_KEY'))
     app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
     app.config['MONGO_URI'] = 'mongodb://localhost:27017/your_db_name'
     

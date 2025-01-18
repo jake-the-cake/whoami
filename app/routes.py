@@ -4,6 +4,18 @@ from .models import get_user_by_email, create_user, verify_password
 
 auth_blueprint = Blueprint('auth', __name__)
 
+@auth_blueprint.route('/a', methods=['GET', 'POST'])
+def home1():
+    return render_template('index.html')
+
+@auth_blueprint.route('/b', methods=['GET', 'POST'])
+def home2():
+    return render_template('index2.html')
+
+@auth_blueprint.route('/', methods=['GET', 'POST'])
+def home():
+    return render_template('home.html')
+
 @auth_blueprint.route('/register', methods=['GET', 'POST'])
 def register():
     form = RegistrationForm()
