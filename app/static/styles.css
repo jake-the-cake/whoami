@@ -30,6 +30,11 @@
     --light-trans: hsl(0, 0%, 95%, .2);
     --light-half: hsl(0, 0%, 95%, .5);
     --light-dim: hsl(0, 0%, 95%, .8);
+
+    --dark: hsl(0, 0%, 5%);
+    --dark-trans: hsl(0, 0%, 5%, .2);
+    --dark-half: hsl(0, 0%, 5%, .5);
+    --dark-dim: hsl(0, 0%, 5%, .8);
 }
 
 body {
@@ -50,16 +55,21 @@ body {
     padding: 2rem;
 }
 
+.hero h3 {
+    text-shadow: var(--shadow-light);
+    margin: 0;
+    font-size: 2rem;
+}
+
 .hero h1 {
     font-size: 3rem;
-    margin-top: 0;
-    margin-bottom: 1rem;
+    margin: 0;
     text-shadow: var(--shadow-light);
 }
 
 .hero p {
     font-size: 1.2rem;
-    margin: 0 auto 2rem;
+    margin: 2rem auto;
     width: 75%;
     max-width: 600px;
     padding: 1rem;
@@ -68,10 +78,10 @@ body {
 
 .section {
     --mainbg: var(--teal);
-    --topbg: var(--magenta);
-    --botbg: var(--yellow);
-    --topborder: var(--magenta-trans);
-    --botborder: var(--yellow-trans);
+    --topbg: var(--yellow);
+    --botbg: var(--magenta);
+    --topborder: var(--yellow-trans);
+    --botborder: var(--magenta-trans);
     position: relative;
     overflow: hidden;
     width: 100vw;
@@ -118,6 +128,7 @@ body {
     font-size: 1.2rem;
     font-weight: bold;
     color: var(--accentcolor);
+    text-shadow: 1px 1px 0 var(--dark-dim);
     background-color: var(--bgcolor);
     padding: 0.5rem 2rem;
     border: none;
