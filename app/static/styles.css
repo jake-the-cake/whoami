@@ -38,15 +38,13 @@
 }
 
 body {
-    background: linear-gradient(135deg, var(--teal), var(--magenta), var(--yellow));
-    background-size: cover;
-    background-attachment: fixed;
     margin: 0;
     padding: 0;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    background-color: var(--dark);
 }
 
 * {
@@ -55,7 +53,10 @@ body {
 
 .hero {
     text-align: center;
+    color: var(--dark);
+    background: linear-gradient(135deg, var(--teal), var(--magenta), var(--yellow));
     padding: 2rem;
+    margin-block: -1rem;
 }
 
 .hero h3 {
@@ -137,10 +138,15 @@ body {
     position: relative;
 }
 
+.flex-g1 {
+    display: flex;
+    gap: 1rem;
+}
+
 .button {
     --bgcolor: var(--magenta-dim);
     --accentcolor: var(--yellow-dim);
-    --hovercolor: var(--teal);
+    --hovercolor: var(--magenta);
     cursor: pointer;
     display: inline-block;
     font-size: 1.2rem;
@@ -149,7 +155,7 @@ body {
     text-shadow: 1px 1px 0 var(--dark-dim);
     background-color: var(--bgcolor);
     padding: 0.5rem 2rem;
-    border: none;
+    border: 1px solid var(--accentcolor);
     border-radius: 5px;
     text-decoration: none;
     box-shadow: 4px 4px 0 var(--accentcolor);
@@ -157,19 +163,19 @@ body {
 }
 
 .button:hover {
-    transform: translateY(-5px);
-    box-shadow: 6px 6px 0 var(--accentcolor);
+    transform: translate(3px, 3px);
+    box-shadow: 1px 1px 0 var(--accentcolor);
     background-color: var(--hovercolor);
 }
 
 .btn-teal {
     --bgcolor: var(--teal-dim);
     --accentcolor: var(--magenta-dim);
-    --hovercolor: var(--yellow);
+    --hovercolor: var(--teal);
 }
 
 .btn-yellow {
     --bgcolor: var(--yellow-dim);
     --accentcolor: var(--teal-dim);
-    --hovercolor: var(--magenta);
+    --hovercolor: var(--yellow);
 }

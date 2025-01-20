@@ -8,6 +8,13 @@
     <script src="{{ url_for('static', filename='buttons.js') }}" defer></script>
 </head>
 <body>
+    <div class="section section-yellow">
+        <div class="section-content flex-g1">
+            <button class="button btn-teal">Home</button>
+            <button class="button btn-teal">Projects</button>
+            <button class="button btn-teal">Contact</button>
+        </div>
+    </div>
     {% block content %}No Content.{% endblock %}
 </body>
 </html>
