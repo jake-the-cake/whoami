@@ -9,11 +9,20 @@
 </head>
 <body>
     <div class="section section-yellow">
-        <div class="section-content flex-g1">
-            <button class="button btn-teal">Home</button>
-            <button class="button btn-teal">Projects</button>
-            <button class="button btn-teal">Contact</button>
-        </div>
+        <nav class="section-content flex-g1">
+            <a href="/">
+                <button class="button btn-teal">Home</button>
+            </a>
+            <a href="/about">
+                <button class="button btn-teal">About</button>
+            </a>
+            <a href="/projects">
+                <button class="button btn-teal">Projects</button>
+            </a>
+            <a href="/contact">
+                <button class="button btn-teal">Contact</button>
+            </a>
+        </nav>
     </div>
     {% block content %}No Content.{% endblock %}
 </body>

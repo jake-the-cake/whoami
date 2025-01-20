@@ -47,6 +47,10 @@ body {
     background-color: var(--dark);
 }
 
+a + .button {
+    text-decoration: none;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -55,7 +59,7 @@ body {
     text-align: center;
     color: var(--dark);
     background: linear-gradient(135deg, var(--teal), var(--magenta), var(--yellow));
-    padding: 2rem;
+    padding-block: 4rem;
     margin-block: -1rem;
 }
 
@@ -124,13 +128,14 @@ body {
 .section::after {
     content: '';
     background-color: var(--mainbg);
-    width: 120%;
+    width: 140%;
     height: 100%;
     margin: auto;
     position: absolute;
-    top: 0; left: 0;
+    top: 0; left: -20%;
     rotate: -1deg;
     z-index: 2;
+    border-radius: 30%;
 }
 
 .section-content {
