@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block subtitle %} - Projects{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <h1>My Projects</h1>
+    <p>
+        Here is a gallery containing applications, components, and web design concepts. These were all created strictly as demonstrations of my skillsets.
+    </p>
+    <div class="flex-g1 flex-jcenter">
+        <button class="button btn-magenta" id="portfolio-button">Apps</button>
+        <button class="button btn-magenta" id="portfolio-button">Components</button>
+        <button class="button btn-magenta" id="portfolio-button">Concepts</button>
+        <button class="button btn-yellow" id="portfolio-button">GitHub</button>
+    </div>
+</div>
+<div class='section'>
+    <div class="section-content">
+        <div class="section-image">
+            <div class="section-name">Section</div>
+            <img src="{{ url_for('static', filename='test.jpg') }}" alt="Section image">
+        </div>
+        <div class="section-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, iste provident ex obcaecati architecto, fugiat est non reprehenderit sint adipi.</div>
+    </div>
+</div>
+{% endblock %}

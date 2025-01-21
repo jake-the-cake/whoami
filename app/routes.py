@@ -4,15 +4,19 @@ from .models import get_user_by_email, create_user, verify_password
 
 auth_blueprint = Blueprint('auth', __name__)
 
-@auth_blueprint.route('/a', methods=['GET', 'POST'])
-def home1():
+@auth_blueprint.route('/about')
+def about():
     return render_template('index.html')
 
-@auth_blueprint.route('/b', methods=['GET', 'POST'])
-def home2():
+@auth_blueprint.route('/contact')
+def contact():
     return render_template('index2.html')
 
-@auth_blueprint.route('/', methods=['GET', 'POST'])
+@auth_blueprint.route('/projects')
+def projects():
+    return render_template('projects.html')
+
+@auth_blueprint.route('/')
 def home():
     return render_template('home.html')
 
