@@ -11,17 +11,17 @@
     --magenta: hsl(var(--magenta-hue), var(--magenta-sat), 45%);
     --yellow: hsl(var(--yellow-hue), var(--yellow-sat), 55%);
 
-    --teal-dim: hsl(var(--teal-hue), var(--teal-sat), 35%, .8);
-    --magenta-dim: hsl(var(--magenta-hue), var(--magenta-sat), 50%, .8);
-    --yellow-dim: hsl(var(--yellow-hue), var(--yellow-sat), 50%, .8);
+    --teal-dim: hsl(var(--teal-hue), var(--teal-sat), 30%, .8);
+    --magenta-dim: hsl(var(--magenta-hue), var(--magenta-sat), 45%, .8);
+    --yellow-dim: hsl(var(--yellow-hue), var(--yellow-sat), 55%, .8);
 
-    --teal-half: hsl(var(--teal-hue), var(--teal-sat), 35%, .5);
-    --magenta-half: hsl(var(--magenta-hue), var(--magenta-sat), 50%, .5);
-    --yellow-half: hsl(var(--yellow-hue), var(--yellow-sat), 50%, .5);
+    --teal-half: hsl(var(--teal-hue), var(--teal-sat), 30%, .5);
+    --magenta-half: hsl(var(--magenta-hue), var(--magenta-sat), 45%, .5);
+    --yellow-half: hsl(var(--yellow-hue), var(--yellow-sat), 55%, .5);
 
-    --teal-trans: hsl(var(--teal-hue), var(--teal-sat), 35%, .2);
-    --magenta-trans: hsl(var(--magenta-hue), var(--magenta-sat), 50%, .2);
-    --yellow-trans: hsl(var(--yellow-hue), var(--yellow-sat), 50%, .2);
+    --teal-trans: hsl(var(--teal-hue), var(--teal-sat), 30%, .2);
+    --magenta-trans: hsl(var(--magenta-hue), var(--magenta-sat), 45%, .2);
+    --yellow-trans: hsl(var(--yellow-hue), var(--yellow-sat), 55%, .2);
 
     --shadow: 4px 4px 0 var(--yellow-dim);
     --shadow-light: 4px 4px 0 var(--yellow-trans);
@@ -36,6 +36,9 @@
     --dark-half: hsl(0, 0%, 5%, .5);
     --dark-dim: hsl(0, 0%, 5%, .8);
 }
+p {
+    letter-spacing: 1px;
+}
 
 body {
     margin: 0;
@@ -43,8 +46,8 @@ body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    background-color: var(--dark);
+    /* gap: 1rem; */
+    background-color: var(--dark-dim);
 }
 
 a + .button {
@@ -60,7 +63,7 @@ a + .button {
     color: var(--dark);
     background: linear-gradient(135deg, var(--teal), var(--magenta), var(--yellow));
     padding-block: 4rem;
-    margin-block: -1rem;
+    /* margin-block: -1rem; */
 }
 
 .hero h3 {
@@ -129,13 +132,39 @@ a + .button {
     content: '';
     background-color: var(--mainbg);
     width: 140%;
-    height: 100%;
+    height: 110%;
     margin: auto;
     position: absolute;
-    top: 0; left: -20%;
-    rotate: -1deg;
+    top: -5%; left: -20%;
+    rotate: -2deg;
     z-index: 2;
     border-radius: 30%;
+}
+
+.space {
+    margin-block: 2rem;
+    color: var(--light);
+}
+
+.space h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 2rem;
+    color: var(--teal);
+    text-shadow: 4px 4px 0 var(--yellow-dim);
+}
+
+.space p {
+    background-color: var(--dark-half);
+    margin: none;
+    width: 75%;
+    max-width: 600px;
+    padding: 1rem;
+    text-align: center;
+}
+
+.title {
+    color: var(--magenta);
 }
 
 .section-content {
@@ -150,6 +179,15 @@ a + .button {
 
 .flex-jcenter {
     justify-content: center;
+}
+
+.flex-acenter {
+    align-items: center;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
 }
 
 .button {
@@ -187,4 +225,20 @@ a + .button {
     --bgcolor: var(--yellow-dim);
     --accentcolor: var(--teal-dim);
     --hovercolor: var(--yellow);
+}
+
+@media screen and (max-width: 500px) {
+    .flex-g1 {
+        flex-direction: column;
+    }
+
+    .flex-jcenter {
+        align-items: center !important;
+        justify-content: inherit;
+    }
+
+    .flex-acenter {
+        justify-content: center !important;
+        align-items: inherit;
+    }
 }
