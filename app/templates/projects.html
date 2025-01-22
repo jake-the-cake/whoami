@@ -15,9 +15,26 @@
         <button class="btn-yellow"">GitHub</button>
     </div>
 </div>
-<div class="space row-10 column">
-    <p class="status">You Are Not Logged In</p>
-    <form method="POST" class="row-10 column" target="/login">
+{% include 'github.html' %}
+<div class='section-teal'>
+    <div class="section-content row-10 column acenter max-width">
+        <h3>Demo Disclaimer</h3>
+        <p class="small">
+            The projects and applications showcased on this portfolio are for demonstration purposes only. These live demos are intended to highlight my skills and capabilities as a developer. Some demos may include basic authorization features, such as user profiles to track scores, statistics, and progress. These profiles are for simulation purposes only and can be accessed at any time by the user.
+        </p>
+        <p class="small">
+            To ensure security, users are advised not to use common or personal passwords when interacting with these demos. You are welcome to use fake email addresses for testing purposes, as no email verification or real-world communication will occur.
+        </p>
+        <p class="small">
+            No sensitive data should be submitted, and no data collected through these demos is used for monetary or commercial purposes. While every effort is made to provide a secure experience, the applications are not intended for real-world deployment. Please use them responsibly and with the understanding that they are works in progress.
+        </p>
+    </div>
+</div>
+<div id="change-form" class="space column acenter max-width">
+    <p class="status">
+        You Are Not Logged In
+    </p>
+    <form method="POST" id='login-form' class="row-10 column">
         {{ login.hidden_tag() }}
         <div class="column">
             {{ login.email.label }} {{ login.email }}
@@ -26,17 +43,23 @@
             {{ login.password.label }} {{ login.password }}
         </div>
         {{ login.submit(class='btn-yellow') }}
+        <div class="small">No account? <span href="#" class="link-teal">Register Here</span></div>
     </form>
+    <form method="POST" id='registration-form' class="row-10 column">
+        {{ register.hidden_tag() }}
+        <div class="column">
+            {{ register.email.label }} {{ register.email }}
+        </div>
+        <div class="column">
+            {{ register.password.label }} {{ register.password }}
+        </div>
+        <div class="column">
+            {{ register.confirm_password.label }} {{ register.confirm_password }}
+        </div>
+        {{ register.submit(class='btn-magenta') }}
+        <div class="small">Have an account? <span href="#" class="link-teal">Login Here</span></div>
+    </form>
+    <script src="{{ url_for('static', filename='change-form.js') }}"></script>
 </div>
-<div class='section-teal'>
-    <div class="section-content row-10 column acenter max-width">
-        <h3>Demo Disclaimer</h3>
-        <p class="small">
-            The following applications, designs, etc are all intended to for demonstration purposes only.<br /> 
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla dolorum nemo ipsa dolorem labore suscipit cumque ducimus consequuntur qui consectetur, fuga, eaque impedit nihil pariatur fugiat unde molestiae. Voluptates, rem.<br />
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia rerum deserunt pariatur, repudiandae nulla distinctio tempora nobis ut quas mollitia saepe natus minus accusamus consectetur quisquam dolor. Fuga, corrupti porro.
-        </p>
-    </div>
-</div>
-{% include 'github.html' %}
+
 {% endblock %}

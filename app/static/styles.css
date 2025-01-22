@@ -75,13 +75,66 @@ a button {
     text-decoration: none;
 }
 
+label, input {
+    font-size: 1rem;
+}
+
+#change-form {
+    height: 100%;
+}
+
+.shrinkY {
+    height: 0px !important;
+}
+
+#change-form form {
+    height: 100%;
+    transition: .2s height;
+    overflow: hidden;
+}
+
+.link-teal,
+.link-magenta,
+.link-yellow {
+    --color: var(--light);
+    text-decoration: underline;
+    font-variant: small-caps;
+    color: var(--color);
+    transition: .2s color;
+    cursor: pointer;
+}
+
+.link-teal {
+    --color: var(--teal);
+}
+
+.link-teal:hover {
+    --color: var(--teal-dim);
+}
+
+.link-magenta {
+    --color: var(--magenta);
+}
+
+.link-magenta:hover {
+    --color: var(--magenta-dim);
+}
+
+.link-yellow {
+    --color: var(--yellow);
+}
+
+.link-yellow:hover {
+    --color: var(--yellow-dim);
+}
+
 .max-width {
     width: 75%;
     max-width: 600px;
 }
 
 .small {
-    font-size: .8em;
+    font-size: .8rem;
 }
 
 .hero {
@@ -178,8 +231,9 @@ a button {
     color: var(--light);
     display: flex;
     justify-content: center;
-    margin-block: 2rem;
+    margin: 2rem auto;
 }
+
 
 .space h3 {
     margin: 0;
@@ -205,6 +259,10 @@ a button {
     z-index: 3;
     position: relative;
     font-size: 1rem;
+}
+
+.section-content * {
+    text-align: center;
 }
 
 .row-10 {
@@ -280,6 +338,14 @@ a button {
     --bgcolor: var(--magenta-dim);
     --accentcolor: var(--yellow-dim);
     --hovercolor: var(--magenta);
+}
+
+.status {
+    font-style: italic;
+    font-weight: 700;
+    color: var(--magenta);
+    font-size: .9rem;
+    margin: 0 auto 1rem;
 }
 
 @media screen and (max-width: 500px) {
