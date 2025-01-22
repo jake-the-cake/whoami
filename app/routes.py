@@ -16,7 +16,9 @@ def contact():
 
 @pages_blueprint.route('/projects')
 def projects():
-    return render_template('projects.html')
+    login = LoginForm()
+    register = RegistrationForm()
+    return render_template('projects.html', login = login, register = register)
 
 @pages_blueprint.route('/')
 def home():

@@ -15,7 +15,19 @@
         <button class="btn-yellow"">GitHub</button>
     </div>
 </div>
-{% include 'github.html' %}
+<div class="space row-10 column">
+    <p class="status">You Are Not Logged In</p>
+    <form method="POST" class="row-10 column" target="/login">
+        {{ login.hidden_tag() }}
+        <div class="column">
+            {{ login.email.label }} {{ login.email }}
+        </div>
+        <div class="column">
+            {{ login.password.label }} {{ login.password }}
+        </div>
+        {{ login.submit(class='btn-yellow') }}
+    </form>
+</div>
 <div class='section-teal'>
     <div class="section-content row-10 column acenter max-width">
         <h3>Demo Disclaimer</h3>
@@ -26,4 +38,5 @@
         </p>
     </div>
 </div>
+{% include 'github.html' %}
 {% endblock %}
