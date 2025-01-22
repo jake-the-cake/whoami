@@ -1,25 +1,28 @@
-from flask import Blueprint, render_template, request, redirect, url_for, flash
+from flask import Blueprint, render_template, request, redirect, url_for, flash, jsonify
 from .forms import RegistrationForm, LoginForm
 from .models import get_user_by_email, create_user, verify_password
+from . import mongo
 
 auth_blueprint = Blueprint('auth', __name__)
+pages_blueprint = Blueprint('pages', __name__)
 
-@auth_blueprint.route('/about')
+@pages_blueprint.route('/about')
 def about():
     return render_template('index.html')
 
-@auth_blueprint.route('/contact')
+@pages_blueprint.route('/contact')
 def contact():
     return render_template('index2.html')
 
-@auth_blueprint.route('/projects')
+@pages_blueprint.route('/projects')
 def projects():
     return render_template('projects.html')
 
-@auth_blueprint.route('/')
+@pages_blueprint.route('/')
 def home():
     return render_template('home.html')
 
+# routes requiring auth validations
 @auth_blueprint.route('/register', methods=['GET', 'POST'])
 def register():
     form = RegistrationForm()
@@ -51,3 +54,11 @@ def login():
             flash('Invalid email or password.', 'danger')
 
     return render_template('login.html', form=form)
+
+@pages_blueprint.route('/data')
+def data():
+    users = []
+    for user in mongo.db.users.find():
+        user['_id'] = str(user['_id'])
+        users.append(user)
+    return jsonify(users)
