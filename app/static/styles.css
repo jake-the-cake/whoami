@@ -88,9 +88,10 @@ label, input {
     overflow: hidden;
 }
 
-#change-form form {
+.can-shrink {
+    /* transition: .3s height, .3s width; */
+    width: 100%;
     height: 100%;
-    transition: .2s height;
 }
 
 .link-teal,
@@ -131,6 +132,11 @@ label, input {
 .max-width {
     width: 75%;
     max-width: 600px;
+}
+
+.max-column {
+    width: 50%;
+    max-width: 400px;
 }
 
 .small {

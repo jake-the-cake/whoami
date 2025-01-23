@@ -30,16 +30,16 @@
         </p>
     </div>
 </div>
-<div id="change-form" class="space column acenter max-width">
+<div id="change-form" class="space column center max-width">
     <p class="status">
         You Are Not Logged In
         <span>(Not Required)</span>
     </p>
-    <div class="row-10 jcenter can-shrinkY">
+    <div class="row-10 jcenter can-shrink">
         <button class="btn-yellow">Login</button>
         <button class="btn-magenta">Register</button>
     </div>
-    <form method="POST" id='login-form' class="row-10 column">
+    <form method="POST" id='login-form' class="row-10 column acenter shrinkY can-shrink max-column">
         {{ login.hidden_tag() }}
         <div class="column">
             {{ login.email.label }} {{ login.email }}
@@ -47,13 +47,13 @@
         <div class="column">
             {{ login.password.label }} {{ login.password }}
         </div>
-        <div class="row-10 jcenter">\
+        <div class="row-10 jcenter">
             {{ login.submit(class='btn-yellow') }}
             <button id="login-cancel" class="btn-yellow-outline">Cancel</button>
         </div>
         <div class="small">No account? <span href="#" class="link-teal">Register Here</span></div>
     </form>
-    <form method="POST" id='registration-form' class="row-10 column">
+    <form method="POST" id='registration-form' class="row-10 column acenter shrinkY can-shrink max-column">
         {{ register.hidden_tag() }}
         <div class="column">
             {{ register.email.label }} {{ register.email }}
@@ -64,7 +64,7 @@
         <div class="column">
             {{ register.confirm_password.label }} {{ register.confirm_password }}
         </div>
-        <div class="row-10 jcenter">\
+        <div class="row-10 jcenter">
             {{ register.submit(class='btn-magenta') }}
             <button id="register-cancel" class="btn-magenta-outline">Cancel</button>
         </div>

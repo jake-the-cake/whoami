@@ -12,17 +12,14 @@ button_container = login_btn.parentNode
 login_cancel = login.querySelector('#login-cancel')
 register_cancel = register.querySelector('#register-cancel')
 
-swapShrink([login, register])
+login_btn.addEventListener('click', () => toggleHeight([button_container, login]))
+register_btn.addEventListener('click', () => toggleHeight([button_container, register]))
+login_link.addEventListener('click', () => toggleHeight([register, login]))
+register_link.addEventListener('click', () => toggleHeight([login, register]))
+login_cancel.addEventListener('click', () => toggleHeight([login, button_container]))
+register_cancel.addEventListener('click', () => toggleHeight([register, button_container]))
 
-// register.classList.add('shrinkY')
-login_btn.addEventListener('click', () => swapShrink([button_container, login]))
-register_btn.addEventListener('click', () => swapShrink([button_container, register]))
-login_link.addEventListener('click', () => swapShrink([register, login]))
-register_link.addEventListener('click', () => swapShrink([login, register]))
-login_cancel.addEventListener('click', () => swapShrink([login, button_container]))
-register_cancel.addEventListener('click', () => swapShrink([register, button_container]))
-
-function swapShrink(array) {
+function toggleHeight(array) {
     array.forEach(cls => {
         cls.classList.toggle('shrinkY')
     })
