@@ -85,12 +85,12 @@ label, input {
 
 .shrinkY {
     height: 0px !important;
+    overflow: hidden;
 }
 
 #change-form form {
     height: 100%;
     transition: .2s height;
-    overflow: hidden;
 }
 
 .link-teal,
@@ -346,6 +346,13 @@ label, input {
     color: var(--magenta);
     font-size: .9rem;
     margin: 0 auto 1rem;
+}
+
+.status span {
+    display: block;
+    font-size: .8rem;
+    color: var(--light-dim);
+    font-weight: 100;
 }
 
 @media screen and (max-width: 500px) {
