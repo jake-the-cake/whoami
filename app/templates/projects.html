@@ -47,7 +47,10 @@
         <div class="column">
             {{ login.password.label }} {{ login.password }}
         </div>
-        {{ login.submit(class='btn-yellow') }}
+        <div class="row-10 jcenter">\
+            {{ login.submit(class='btn-yellow') }}
+            <button id="login-cancel" class="btn-yellow-outline">Cancel</button>
+        </div>
         <div class="small">No account? <span href="#" class="link-teal">Register Here</span></div>
     </form>
     <form method="POST" id='registration-form' class="row-10 column">
@@ -61,7 +64,10 @@
         <div class="column">
             {{ register.confirm_password.label }} {{ register.confirm_password }}
         </div>
-        {{ register.submit(class='btn-magenta') }}
+        <div class="row-10 jcenter">\
+            {{ register.submit(class='btn-magenta') }}
+            <button id="register-cancel" class="btn-magenta-outline">Cancel</button>
+        </div>
         <div class="small">Have an account? <span href="#" class="link-teal">Login Here</span></div>
     </form>
     <script src="{{ url_for('static', filename='change-form.js') }}"></script>

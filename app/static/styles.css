@@ -298,7 +298,10 @@ label, input {
 
 .btn-teal,
 .btn-magenta,
-.btn-yellow {
+.btn-yellow,
+.btn-teal-outline,
+.btn-magenta-outline,
+.btn-yellow-outline {
     cursor: pointer;
     display: inline-block;
     font-size: 1.2rem;
@@ -316,7 +319,10 @@ label, input {
 
 .btn-teal:hover,
 .btn-magenta:hover,
-.btn-yellow:hover {
+.btn-yellow:hover,
+.btn-teal-outline:hover,
+.btn-magenta-outline:hover,
+.btn-yellow-outline:hover {
     transform: translate(3px, 3px);
     box-shadow: 1px 1px 0 var(--accentcolor);
     background-color: var(--hovercolor);
@@ -338,6 +344,24 @@ label, input {
     --bgcolor: var(--magenta-dim);
     --accentcolor: var(--yellow-dim);
     --hovercolor: var(--magenta);
+}
+
+.btn-teal-outline {
+    --bgcolor: var(--dark-dim);
+    --accentcolor: var(--teal-dim);
+    --hovercolor: var(--dark);
+}
+
+.btn-magenta-outline {
+    --bgcolor: var(--dark-dim);
+    --accentcolor: var(--magenta-dim);
+    --hovercolor: var(--dark);
+}
+
+.btn-yellow-outline {
+    --bgcolor: var(--dark-dim);
+    --accentcolor: var(--yellow-dim);
+    --hovercolor: var(--dark);
 }
 
 .status {
