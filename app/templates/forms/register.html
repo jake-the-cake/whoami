@@ -1,0 +1,17 @@
+<form method="POST" id='registration-form' class="row-10 column acenter shrinkY can-shrink max-column">
+    {{ register.hidden_tag() }}
+    <div class="column">
+        {{ register.email.label }} {{ register.email }}
+    </div>
+    <div class="column">
+        {{ register.password.label }} {{ register.password }}
+    </div>
+    <div class="column">
+        {{ register.confirm_password.label }} {{ register.confirm_password }}
+    </div>
+    <div class="row-10 jcenter">
+        {{ register.submit(class='btn-magenta') }}
+        <button id="register-cancel" class="btn-magenta-outline">Cancel</button>
+    </div>
+    <div class="small">Have an account? <span href="#" class="link-teal">Login Here</span></div>
+</form>

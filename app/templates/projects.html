@@ -15,7 +15,7 @@
         <button class="btn-yellow"">GitHub</button>
     </div>
 </div>
-{% include 'github.html' %}
+{% include 'components/github-promo.html' %}
 <div class='section-teal'>
     <div class="section-content row-10 column acenter max-width">
         <h3>Demo Disclaimer</h3>
@@ -30,47 +30,5 @@
         </p>
     </div>
 </div>
-<div id="change-form" class="space column center max-width">
-    <p class="status">
-        You Are Not Logged In
-        <span>(Not Required)</span>
-    </p>
-    <div class="row-10 jcenter can-shrink">
-        <button class="btn-yellow">Login</button>
-        <button class="btn-magenta">Register</button>
-    </div>
-    <form method="POST" id='login-form' class="row-10 column acenter shrinkY can-shrink max-column">
-        {{ login.hidden_tag() }}
-        <div class="column">
-            {{ login.email.label }} {{ login.email }}
-        </div>
-        <div class="column">
-            {{ login.password.label }} {{ login.password }}
-        </div>
-        <div class="row-10 jcenter">
-            {{ login.submit(class='btn-yellow') }}
-            <button id="login-cancel" class="btn-yellow-outline">Cancel</button>
-        </div>
-        <div class="small">No account? <span href="#" class="link-teal">Register Here</span></div>
-    </form>
-    <form method="POST" id='registration-form' class="row-10 column acenter shrinkY can-shrink max-column">
-        {{ register.hidden_tag() }}
-        <div class="column">
-            {{ register.email.label }} {{ register.email }}
-        </div>
-        <div class="column">
-            {{ register.password.label }} {{ register.password }}
-        </div>
-        <div class="column">
-            {{ register.confirm_password.label }} {{ register.confirm_password }}
-        </div>
-        <div class="row-10 jcenter">
-            {{ register.submit(class='btn-magenta') }}
-            <button id="register-cancel" class="btn-magenta-outline">Cancel</button>
-        </div>
-        <div class="small">Have an account? <span href="#" class="link-teal">Login Here</span></div>
-    </form>
-    <script src="{{ url_for('static', filename='change-form.js') }}"></script>
-</div>
-
+{% include 'components/login-app.html' %}
 {% endblock %}

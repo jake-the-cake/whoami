@@ -1,0 +1,13 @@
+<div id="change-form" class="space column center max-width">
+    <p class="status">
+        You Are Not Logged In
+        <span>(Not Required)</span>
+    </p>
+    <div class="row-10 jcenter can-shrink">
+        <button class="btn-yellow">Login</button>
+        <button class="btn-magenta">Register</button>
+    </div>
+    {% include 'forms/login.html' %}
+    {% include 'forms/register.html' %}
+    <script src="{{ url_for('static', filename='js/apps/change-form.js') }}"></script>
+</div>

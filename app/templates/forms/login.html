@@ -1,0 +1,14 @@
+<form method="POST" id='login-form' class="row-10 column acenter shrinkY can-shrink max-column">
+    {{ login.hidden_tag() }}
+    <div class="column">
+        {{ login.email.label }} {{ login.email }}
+    </div>
+    <div class="column">
+        {{ login.password.label }} {{ login.password }}
+    </div>
+    <div class="row-10 jcenter">
+        {{ login.submit(class='btn-yellow') }}
+        <button id="login-cancel" class="btn-yellow-outline">Cancel</button>
+    </div>
+    <div class="small">No account? <span href="#" class="link-teal">Register Here</span></div>
+</form>
