@@ -1,23 +1,23 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash, jsonify, session
 from app.forms import RegistrationForm, LoginForm
-from app.models import get_user_by_email, verify_password
+from app.models import get_user_by_email, verify_password, create_user
 from app import mongo
 
 pages_blueprint = Blueprint('pages', __name__)
 
-def use_login_form() -> LoginForm:
-    form = LoginForm()
-    if form.validate_on_submit():
-        email = form.email.data
-        password = form.password.data
+# def use_login_form() -> LoginForm:
+#     form = LoginForm()
+#     if form.validate_on_submit():
+#         email = form.email.data
+#         password = form.password.data
 
-        user = get_user_by_email(email)
-        if user and verify_password(user['password'], password):
-            session['user'] = user
-        else:
-            session['user'] = { 'error': 'Invalid login credentials.' }
-        return redirect(request.referrer)  # Define a dashboard route later
-    return form
+#         user = get_user_by_email(email)
+#         if user and verify_password(user['password'], password):
+#             session['user'] = user
+#         else:
+#             session['user'] = { 'error': 'Invalid login credentials.' }
+#         return redirect(request.referrer)  # Define a dashboard route later
+#     return form
 
 @pages_blueprint.route('/about')
 def about():
@@ -32,7 +32,7 @@ def projects():
     user = session.get('user', None)
     print(user)
     register = RegistrationForm()
-    return render_template('projects.html', login=use_login_form(), register = register, user=user)
+    return render_template('projects.html', login=LoginForm(), register = register, user=user)
 
 @pages_blueprint.route('/')
 def home():
@@ -45,3 +45,19 @@ def data():
         user['_id'] = str(user['_id'])
         users.append(user)
     return jsonify(users)
+
+# def use_register_form():
+#     form = RegistrationForm()
+#     if form.validate_on_submit():
+#         email = form.email.data
+#         password = form.password.data
+
+#     if get_user_by_email(email):
+#         session['user'] = {
+#         'error': 'Email is already registered.'
+#         }
+#     else:
+#         create_user(email, password)
+#         return redirect(url_for('auth.login'))
+
+#     return render_template('register.html', form=form)

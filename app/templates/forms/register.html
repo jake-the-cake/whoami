@@ -1,4 +1,4 @@
-<form method="POST" id='registration-form' class="row-10 column acenter shrinkY can-shrink max-column">
+<form method="POST" action="{{ url_for('auth.register') }}" id='registration-form' class="row-10 column acenter shrinkY can-shrink max-column">
     {{ register.hidden_tag() }}
     <div class="column">
         {{ register.email.label }} {{ register.email }}
