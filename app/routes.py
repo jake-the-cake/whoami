@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect, url_for, flash, jsonify
+from flask import Blueprint, render_template, request, redirect, url_for, flash, jsonify, session
 from .forms import RegistrationForm, LoginForm
 from .models import get_user_by_email, create_user, verify_password
 from . import mongo
@@ -14,10 +14,10 @@ def use_login_form() -> LoginForm:
 
         user = get_user_by_email(email)
         if user and verify_password(user['password'], password):
-            flash('Login successful!', 'success')
-            return redirect(url_for('auth.dashboard'))  # Define a dashboard route later
+            session['user'] = user
         else:
-            flash('Invalid email or password.', 'danger')
+            session['user'] = { 'error': 'Invalid login credentials.' }
+        return redirect(request.referrer)  # Define a dashboard route later
     return form
 
 @pages_blueprint.route('/about')
@@ -30,8 +30,10 @@ def contact():
 
 @pages_blueprint.route('/projects', methods=['GET', 'POST'])
 def projects():
+    user = session.get('user', None)
+    print(user)
     register = RegistrationForm()
-    return render_template('projects.html', login=use_login_form(), register = register)
+    return render_template('projects.html', login=use_login_form(), register = register, user=user)
 
 @pages_blueprint.route('/')
 def home():

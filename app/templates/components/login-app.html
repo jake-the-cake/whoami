@@ -1,7 +1,13 @@
 <div id="change-form" class="space column center max-width">
     <p class="status">
-        You Are Not Logged In
-        <span>(Not Required)</span>
+        {% if not user %}
+            You Are Not Logged In
+            <span>(Not Required)</span>
+        {% elif user.get('error') %}
+            {{ user['error'] }}
+        {% else %}
+            {{ user.email }}
+        {% endif %}
     </p>
     <div class="row-10 jcenter can-shrink">
         <button class="btn-yellow">Login</button>
