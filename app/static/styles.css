@@ -75,8 +75,17 @@ a button {
     text-decoration: none;
 }
 
-label, input {
+label, input, select {
     font-size: 1rem;
+}
+
+select, input {
+	background-color: var(--teal-trans);
+	padding: .5rem;
+	border-radius: .5rem;
+	border-color: var(--teal);
+	color: var(--yellow);
+	font-weight: 700;
 }
 
 #change-form {

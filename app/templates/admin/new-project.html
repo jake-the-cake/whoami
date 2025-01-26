@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Add Project</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="column row-10 acenter">
+	<div class="section-magenta">
+		<div class="section-content">
+			<h3>Add A New Project</h3>
+		</div>
+	</div>
+	<div class="space row-10 column acenter">
+		<form method="POST" class="row-10 column acenter">
+			{{ form.hidden_tag() }}
+			<div class="column">
+				{{ form.category.label }}
+				{{ form.category }}
+			</div>
+			<div class="column">
+				{{ form.title.label }}
+				{{ form.title }}
+			</div>
+			<div class="column">
+				{{ form.desc.label }}
+				{{ form.desc }}
+			</div>
+			<div class="column">
+				{{ form.url.label }}
+				{{ form.url }}
+			</div>
+			<div class="column">
+				{{ form.img.label }}
+				{{ form.img }}
+			</div>
+			{{ form.submit(class='btn-yellow') }}
+		</form>
+	</div>
+</body>
+</html>

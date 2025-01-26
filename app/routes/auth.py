@@ -1,18 +1,8 @@
-from flask import Blueprint, request, redirect, session, url_for
-from app.models import get_user_by_email, create_user, verify_password
+from flask import Blueprint, request, redirect, session, render_template_string
+from app.models import get_user_by_email, create_user, verify_password, set_user
+from app.errors import invalid_email, invalid_password, user_exists
 
 auth_blueprint = Blueprint('auth', __name__)
-
-def set_error(error):
-  session['user'] = { 'error': error }
-
-def user_exists(email): set_error(f'{ email } is already registered.')
-def invalid_email(email): set_error(f'{ email } is not registered.' )
-def invalid_password(): set_error('Invalid password.')
-
-def set_user(user):
-  user['_id'] = str(user['_id'])
-  session['user'] = user
 
 @auth_blueprint.route('/register', methods=['POST'])
 def register():
@@ -35,3 +25,12 @@ def login():
     else: invalid_password()
   else: invalid_email(email)
   return redirect(request.referrer)
+
+@auth_blueprint.route('/logout', methods=['GET'])
+def logout():
+  session.pop('user', None)
+  return redirect(request.referrer)
+
+@auth_blueprint.route('/dashboard', methods=['GET'])
+def dashboard():
+  return render_template_string('Dashboard Coming Soon...')

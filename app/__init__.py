@@ -19,7 +19,8 @@ def create_app():
     bcrypt.init_app(app)
     csrf.init_app(app)
 
-    from .routes import auth_blueprint, pages_blueprint
+    from .routes import admin_blueprint, auth_blueprint, pages_blueprint
+    app.register_blueprint(admin_blueprint)
     app.register_blueprint(auth_blueprint)
     app.register_blueprint(pages_blueprint)
 

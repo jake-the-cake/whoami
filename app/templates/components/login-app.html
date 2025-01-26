@@ -9,10 +9,14 @@
             Logged in as: {{ user.email }}
         {% endif %}
     </p>
-    {% if user %}
+    {% if user and not user.error %}
     <div class="row-10 jcenter">
-        <button class="btn-teal">Dashboard</button>
-        <button class="btn-teal-outline">Logout</button>
+        <a href="{{ url_for('auth.dashboard') }}">
+            <button class="btn-teal">Dashboard</button>
+        </a>
+        <a href="{{ url_for('auth.logout') }}">
+            <button class="btn-teal-outline">Logout</button>
+        </a>
     </div>
     {% else %}
         <div class="row-10 jcenter can-shrink">

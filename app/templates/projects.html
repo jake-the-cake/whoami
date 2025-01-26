@@ -6,7 +6,7 @@
 <div class="hero">
     <h1>My Projects</h1>
     <p>
-        Here is a gallery containing applications, components, and web design concepts. These were all created strictly as demonstrations of my skillsets.
+        This gallery showcases applications, components, and web design concepts, all created solely to demonstrate my skills.
     </p>
     <div class="row-10 jcenter flip">
         <button class="btn-magenta">Apps</button>
@@ -15,7 +15,7 @@
         <button class="btn-yellow">GitHub</button>
     </div>
 </div>
-<!-- {% include 'components/github-promo.html' %} -->
+{% include 'components/github-promo.html' %}
 <div class='section-teal'>
     <div class="section-content row-10 column acenter max-width">
         <h3>Demo Disclaimer</h3>
@@ -31,4 +31,52 @@
     </div>
 </div>
 {% include 'components/login-app.html' %}
+<div class="section-magenta">
+	<div class="section-content row-10 column acenter max-width">
+		<h3>Apps & Games</h3>
+		<p class="small">
+			Interactive tools and entertainment experiences showcasing functionality, creativity, and problem-solving skills.
+		</p>
+	</div>
+</div>
+<div class="space row-10 column max-width">
+	{% for app in apps %}
+	<div class="project">
+		<div class="row-10">
+			<img src="{{ app.img }}" alt="Sample Image">
+			<div class="column">
+				<div class="title">{{ app.title }}</div>
+				<div class="project-desc">{{ app.desc }}</div>
+				<a href="{{ app.url }}">View Demo</a>
+			</div>
+		</div>
+	</div>
+	{% endfor %}
+</div>
+<div class="section-teal">
+	<div class="section-content row-10 column acenter max-width">
+		<h3>Components</h3>
+		<p class="small">
+			Modular and reusable UI elements designed for efficiency and seamless integration into larger projects.
+		</p>
+	</div>
+</div>
+<div class="space">
+	<p>
+		Text
+	</p>
+</div>
+<div class="section-yellow">
+	<div class="section-content row-10 column acenter max-width">
+		<h3>Design Concepts</h3>
+		<p class="small">
+			Visual and conceptual designs that emphasize aesthetics, innovation, and user-focused solutions.
+		</p>
+	</div>
+</div>
+<div class="space">
+	<p>
+		Text
+	</p>
+</div>
 {% endblock %}

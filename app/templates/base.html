@@ -5,24 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jason Thompson, Web Developer{% block subtitle %}{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename="styles.css") }}">
-    <script src="{{ url_for('static', filename='js/nav-buttons.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
 </head>
 <body>
     <div class="section-yellow">
-        <nav class="section-content row-10 jcenter">
-            <a href="/">
-                <button class="btn-teal">Home</button>
-            </a>
-            <a href="/about">
-                <button class="btn-teal">About</button>
-            </a>
-            <a href="/projects">
-                <button class="btn-teal">Projects</button>
-            </a>
-            <a href="/contact">
-                <button class="btn-teal">Contact</button>
-            </a>
-        </nav>
+        {% include 'components/navbar.html' %}
     </div>
     {% block content %}No Content.{% endblock %}
 </body>

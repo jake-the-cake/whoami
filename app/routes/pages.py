@@ -1,23 +1,10 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash, jsonify, session
-from app.forms import RegistrationForm, LoginForm
-from app.models import get_user_by_email, verify_password, create_user
+from app.forms import RegistrationForm, LoginForm, AddProjectForm
+from app.models import parse_choices
 from app import mongo
 
+
 pages_blueprint = Blueprint('pages', __name__)
-
-# def use_login_form() -> LoginForm:
-#     form = LoginForm()
-#     if form.validate_on_submit():
-#         email = form.email.data
-#         password = form.password.data
-
-#         user = get_user_by_email(email)
-#         if user and verify_password(user['password'], password):
-#             session['user'] = user
-#         else:
-#             session['user'] = { 'error': 'Invalid login credentials.' }
-#         return redirect(request.referrer)  # Define a dashboard route later
-#     return form
 
 @pages_blueprint.route('/about')
 def about():
@@ -29,10 +16,14 @@ def contact():
 
 @pages_blueprint.route('/projects', methods=['GET', 'POST'])
 def projects():
-    user = session.get('user', None)
-    print(user)
-    register = RegistrationForm()
-    return render_template('projects.html', login=LoginForm(), register = register, user=user)
+	user = session.get('user', None)
+	projects = mongo.db.projects.find()
+	register = RegistrationForm()
+	return render_template('projects.html', 
+												login=LoginForm(), 
+												register = register, 
+												user=user, 
+												apps=( app for app in projects if app['category'] == '1'))
 
 @pages_blueprint.route('/')
 def home():
@@ -40,24 +31,13 @@ def home():
 
 @pages_blueprint.route('/data')
 def data():
-    users = []
-    for user in mongo.db.users.find():
-        user['_id'] = str(user['_id'])
-        users.append(user)
-    return jsonify(users)
-
-# def use_register_form():
-#     form = RegistrationForm()
-#     if form.validate_on_submit():
-#         email = form.email.data
-#         password = form.password.data
-
-#     if get_user_by_email(email):
-#         session['user'] = {
-#         'error': 'Email is already registered.'
-#         }
-#     else:
-#         create_user(email, password)
-#         return redirect(url_for('auth.login'))
-
-#     return render_template('register.html', form=form)
+	users = []
+	projects = []
+	for project in mongo.db.projects.find():
+		project['_id'] = str(project['_id'])
+		project['category'] = parse_choices(project['category'], AddProjectForm.choices)
+		projects.append(project)
+	for user in mongo.db.users.find():
+		user['_id'] = str(user['_id'])
+		users.append(user)
+	return jsonify(users + projects)
