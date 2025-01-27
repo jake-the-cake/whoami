@@ -1,6 +1,6 @@
-from flask import Blueprint, request, redirect, session, render_template
+from flask import Blueprint, request, redirect, session, render_template, render_template_string, url_for
 from app.forms import AddProjectForm
-from app.models import create_project, parse_choices
+from app.models import create_project, delete_project_by_id
 
 admin_blueprint = Blueprint('admin', __name__)
 
@@ -17,3 +17,8 @@ def add_project():
 		)
     return redirect(request.referrer)
   return render_template('/admin/new-project.html', form=form)
+
+@admin_blueprint.route('/projects/remove/<string:id>', methods=['GET', 'POST'])
+def delete_project(id: str):
+  delete_project_by_id(id)
+  return redirect(url_for('pages.projects'))

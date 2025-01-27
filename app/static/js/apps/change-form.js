@@ -17,12 +17,25 @@ register_btn.addEventListener('click', () => toggleHeight([button_container, reg
 
 login_cancel = login.querySelector('#login-cancel')
 register_cancel = register.querySelector('#register-cancel')
-login_cancel.addEventListener('click', () => toggleHeight([login, button_container]))
-register_cancel.addEventListener('click', () => toggleHeight([register, button_container]))
+login_cancel.addEventListener('click', (e) => {
+	e.preventDefault()
+	cancelButton([login, button_container])
+})
+register_cancel.addEventListener('click', (e) => {
+	e.preventDefault()
+	cancelButton([register, button_container])
+})
 
 function returnToPosition() {
     localStorage.setItem('scrollPosition', window.scrollY)
     localStorage.setItem('previousPage', window.location.pathname)
+}
+
+function cancelButton(array) {
+	array[0].reset()
+	document.body.focus()
+	toggleHeight(array)
+	e.preventDefault()
 }
 
 function toggleHeight(array) {

@@ -1,5 +1,6 @@
 from . import mongo, bcrypt
 from flask import session
+from bson import ObjectId
 
 def get_user_by_email(email):
 	return mongo.db.users.find_one({"email": email})
@@ -19,6 +20,12 @@ def create_project(title, desc, url, img, category):
 		'img': img,
 		'category': category
 	})
+
+def delete_project_by_id(id: str) -> dict:
+	if get_project_by_id(id): mongo.db.projects.delete_one({'_id': ObjectId(id)})
+
+def get_project_by_id(id: str) -> dict:
+	return mongo.db.projects.find_one(ObjectId(id))
 
 def parse_choices(index: str, choices: list):
 	print(choices)
