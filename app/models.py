@@ -2,6 +2,14 @@ from . import mongo, bcrypt
 from flask import session
 from bson import ObjectId
 
+def new_message(form):
+	print(form)
+	mongo.db.messages.insert_one({
+		'name': form['name'],
+		'email': form['email'],
+		'message': form['message']
+	})
+
 project_types = [
 	(1, 'App & Games'),
 	(2, 'Components'),

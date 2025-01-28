@@ -1,5 +1,5 @@
-from flask import Blueprint, request, redirect, session, render_template_string
-from app.models import get_user_by_email, create_user, verify_password, set_user
+from flask import Blueprint, request, redirect, session, render_template_string, flash
+from app.models import get_user_by_email, create_user, verify_password, set_user, new_message
 from app.errors import invalid_email, invalid_password, user_exists
 
 auth_blueprint = Blueprint('auth', __name__)
@@ -29,11 +29,6 @@ def login():
 @auth_blueprint.route('/logout', methods=['GET'])
 def logout():
   session.pop('user', None)
-  return redirect(request.referrer)
-
-@auth_blueprint.route('/logout', methods=['POST'])
-def contact_me():
-  print(request.form)
   return redirect(request.referrer)
 
 @auth_blueprint.route('/dashboard', methods=['GET'])

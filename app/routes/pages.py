@@ -1,6 +1,6 @@
-from flask import Blueprint, render_template, jsonify, session
+from flask import Blueprint, render_template, jsonify, session, redirect, url_for, flash, request
 from app.forms import RegistrationForm, LoginForm, ContactForm
-from app.models import parse_choices
+from app.models import parse_choices, new_message
 from app import mongo
 
 
@@ -10,9 +10,15 @@ pages_blueprint = Blueprint('pages', __name__)
 def about():
     return render_template('about.html')
 
-@pages_blueprint.route('/contact')
+@pages_blueprint.route('/contact', methods=['GET', 'POST'])
 def contact():
-    return render_template('contact.html', form=ContactForm())
+		form = ContactForm()
+		if form.validate_on_submit():
+			if not form.errors:
+				flash('Thank you for your message. I will get back to you shortly!')
+				new_message(request.form)
+			return redirect(request.referrer)
+		return render_template('contact.html', form=form)
 
 @pages_blueprint.route('/projects', methods=['GET', 'POST'])
 def projects():
@@ -35,6 +41,10 @@ def home():
 def data():
 	users = []
 	projects = []
+	messages = []
+	for message in mongo.db.messages.find():
+		message['_id'] = str(message['_id'])
+		messages.append(message)
 	for project in mongo.db.projects.find():
 		project['_id'] = str(project['_id'])
 		project['category'] = parse_choices(project['category'])
@@ -42,4 +52,4 @@ def data():
 	for user in mongo.db.users.find():
 		user['_id'] = str(user['_id'])
 		users.append(user)
-	return jsonify(users + projects)
+	return jsonify(users + projects + messages)
