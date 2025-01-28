@@ -35,7 +35,6 @@ function cancelButton(array) {
 	array[0].reset()
 	document.body.focus()
 	toggleHeight(array)
-	e.preventDefault()
 }
 
 function toggleHeight(array) {

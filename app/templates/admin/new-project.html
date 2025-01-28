@@ -10,6 +10,13 @@
 	<div class="section-magenta">
 		<div class="section-content">
 			<h3>Add A New Project</h3>
+			{% with messages = get_flashed_messages() %}
+				{% if messages|length > 0 %}
+					{% for m in messages %}
+						<p>{{ m }}</p>
+					{% endfor %}
+				{% endif %}
+			{% endwith %}
 		</div>
 	</div>
 	<div class="space row-10 column acenter">

@@ -4,31 +4,31 @@
 
 {% block content %}
 <div class="hero">
-    <h1>My Projects</h1>
-    <p>
-        This gallery showcases applications, components, and web design concepts, all created solely to demonstrate my skills.
-    </p>
-    <div class="row-10 jcenter flip">
-        <button class="btn-magenta">Apps</button>
-        <button class="btn-magenta">Components</button>
-        <button class="btn-magenta">Concepts</button>
-        <button class="btn-yellow">GitHub</button>
-    </div>
+	<h1>My Projects</h1>
+	<p>
+		This gallery showcases applications, components, and web design concepts, all created solely to demonstrate my skills.
+	</p>
+	<div class="row-10 jcenter flip">
+		<button class="btn-magenta">Apps</button>
+		<button class="btn-magenta">Components</button>
+		<button class="btn-magenta">Concepts</button>
+		<button class="btn-yellow">GitHub</button>
+	</div>
 </div>
 {% include 'components/github-promo.html' %}
 <div class='section-teal'>
-    <div class="section-content row-10 column acenter max-width">
-        <h3>Demo Disclaimer</h3>
-        <p class="small">
-            The projects and applications showcased on this portfolio are for demonstration purposes only. These live demos are intended to highlight my skills and capabilities as a developer. Some demos may include basic authorization features, such as user profiles to track scores, statistics, and progress. These profiles are for simulation purposes only and can be accessed at any time by the user.
-        </p>
-        <p class="small">
-            To ensure security, users are advised not to use common or personal passwords when interacting with these demos. You are welcome to use fake email addresses for testing purposes, as no email verification or real-world communication will occur.
-        </p>
-        <p class="small">
-            No sensitive data should be submitted, and no data collected through these demos is used for monetary or commercial purposes. While every effort is made to provide a secure experience, the applications are not intended for real-world deployment. Please use them responsibly and with the understanding that they are works in progress.
-        </p>
-    </div>
+	<div class="section-content row-10 column acenter max-width">
+		<h3>Demo Disclaimer</h3>
+		<p class="small">
+			The projects and applications showcased on this portfolio are for demonstration purposes only. These live demos are intended to highlight my skills and capabilities as a developer. Some demos may include basic authorization features, such as user profiles to track scores, statistics, and progress. These profiles are for simulation purposes only and can be accessed at any time by the user.
+		</p>
+		<p class="small">
+			To ensure security, users are advised not to use common or personal passwords when interacting with these demos. You are welcome to use fake email addresses for testing purposes, as no email verification or real-world communication will occur.
+		</p>
+		<p class="small">
+			No sensitive data should be submitted, and no data collected through these demos is used for monetary or commercial purposes. While every effort is made to provide a secure experience, the applications are not intended for real-world deployment. Please use them responsibly and with the understanding that they are works in progress.
+		</p>
+	</div>
 </div>
 {% include 'components/login-app.html' %}
 <div class="section-magenta">
@@ -62,9 +62,18 @@
 	</div>
 </div>
 <div class="space">
-	<p>
-		Text
-	</p>
+	{% for comp in components %}
+	<div class="project">
+		<div class="row-10">
+			<img src="{{ comp.img }}" alt="Sample Image">
+			<div class="column">
+				<div class="title">{{ comp.title }}</div>
+				<div class="project-desc">{{ comp.desc }}</div>
+				<a href="{{ comp.url }}">View Demo</a>
+			</div>
+		</div>
+	</div>
+	{% endfor %}
 </div>
 <div class="section-yellow">
 	<div class="section-content row-10 column acenter max-width">
@@ -75,8 +84,17 @@
 	</div>
 </div>
 <div class="space">
-	<p>
-		Text
-	</p>
+	{% for concept in concepts %}
+	<div class="project">
+		<div class="row-10">
+			<img src="{{ concept.img }}" alt="Sample Image">
+			<div class="column">
+				<div class="title">{{ concept.title }}</div>
+				<div class="project-desc">{{ concept.desc }}</div>
+				<a href="{{ concept.url }}">View Demo</a>
+			</div>
+		</div>
+	</div>
+	{% endfor %}
 </div>
 {% endblock %}

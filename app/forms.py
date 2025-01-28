@@ -1,6 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, SelectField
 from wtforms.validators import DataRequired, Email, EqualTo, Length
+from app.models import project_types
 
 class RegistrationForm(FlaskForm):
 	email            = StringField('Email', validators=[DataRequired(), Email(), Length(max=100)])
@@ -14,14 +15,10 @@ class LoginForm(FlaskForm):
 	submit   = SubmitField('Login')
     
 class AddProjectForm(FlaskForm):
-	choices = [
-		(1, 'App & Games'),
-		(2, 'Components'),
-		(3, 'Design Concepts')
-	]
+
 	title    = StringField('Title', validators=[DataRequired()])
 	desc     = StringField('Description', validators=[DataRequired()])
 	url      = StringField('Server URL', validators=[DataRequired()])
 	img      = StringField('Sample Image')
-	category = SelectField('Project Type', validators=[DataRequired()], choices=choices)
+	category = SelectField('Project Type', validators=[DataRequired()], choices=project_types)
 	submit   = SubmitField('Add')

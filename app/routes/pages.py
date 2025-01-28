@@ -1,5 +1,5 @@
-from flask import Blueprint, render_template, request, redirect, url_for, flash, jsonify, session
-from app.forms import RegistrationForm, LoginForm, AddProjectForm
+from flask import Blueprint, render_template, jsonify, session
+from app.forms import RegistrationForm, LoginForm
 from app.models import parse_choices
 from app import mongo
 
@@ -16,14 +16,16 @@ def contact():
 
 @pages_blueprint.route('/projects', methods=['GET', 'POST'])
 def projects():
-	user = session.get('user', None)
 	projects = mongo.db.projects.find()
-	register = RegistrationForm()
+	lists = [[] for _ in range(3)]
+	for p in projects: lists[int(p.get('category'), 1) - 1].append(p)
 	return render_template('projects.html', 
-												login=LoginForm(), 
-												register = register, 
-												user=user, 
-												apps=( app for app in projects if app['category'] == '1'))
+									login=LoginForm(), 
+									register = RegistrationForm(), 
+									user=session.get('user', None), 
+									apps=lists[0],
+									components=lists[1],
+									concepts=lists[2])
 
 @pages_blueprint.route('/')
 def home():
@@ -35,7 +37,7 @@ def data():
 	projects = []
 	for project in mongo.db.projects.find():
 		project['_id'] = str(project['_id'])
-		project['category'] = parse_choices(project['category'], AddProjectForm.choices)
+		project['category'] = parse_choices(project['category'])
 		projects.append(project)
 	for user in mongo.db.users.find():
 		user['_id'] = str(user['_id'])
