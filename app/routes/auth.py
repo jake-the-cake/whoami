@@ -31,6 +31,11 @@ def logout():
   session.pop('user', None)
   return redirect(request.referrer)
 
+@auth_blueprint.route('/logout', methods=['POST'])
+def contact_me():
+  print(request.form)
+  return redirect(request.referrer)
+
 @auth_blueprint.route('/dashboard', methods=['GET'])
 def dashboard():
   return render_template_string('Dashboard Coming Soon...')

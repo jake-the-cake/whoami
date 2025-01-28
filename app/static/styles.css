@@ -42,6 +42,10 @@
 	font-size: 1em;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	background-color: var(--dark-dim);
 	display: flex;
@@ -75,11 +79,11 @@ a button {
 	text-decoration: none;
 }
 
-label, input, select {
+label, input, select, textarea {
 	font-size: 1rem;
 }
 
-select, input {
+select, input, textarea {
 	background-color: var(--teal-trans);
 	padding: .5rem;
 	border-radius: .5rem;
@@ -266,6 +270,7 @@ select, input {
 
 .title {
 	color: var(--magenta);
+	font-size: 1rem;
 }
 
 .section-content {
@@ -390,6 +395,10 @@ select, input {
 	font-size: .8rem;
 	color: var(--light-dim);
 	font-weight: 100;
+}
+
+.project-desc {
+	font-size: 1rem;
 }
 
 @media screen and (max-width: 500px) {

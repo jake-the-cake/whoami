@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, jsonify, session
-from app.forms import RegistrationForm, LoginForm
+from app.forms import RegistrationForm, LoginForm, ContactForm
 from app.models import parse_choices
 from app import mongo
 
@@ -12,7 +12,7 @@ def about():
 
 @pages_blueprint.route('/contact')
 def contact():
-    return render_template('contact.html')
+    return render_template('contact.html', form=ContactForm())
 
 @pages_blueprint.route('/projects', methods=['GET', 'POST'])
 def projects():
