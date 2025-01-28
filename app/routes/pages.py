@@ -18,7 +18,7 @@ def contact():
 def projects():
 	projects = mongo.db.projects.find()
 	lists = [[] for _ in range(3)]
-	for p in projects: lists[int(p.get('category'), 1) - 1].append(p)
+	for p in projects: lists[int(p.get('category', 1)) - 1].append(p)
 	return render_template('projects.html', 
 									login=LoginForm(), 
 									register = RegistrationForm(), 
