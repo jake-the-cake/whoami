@@ -8,11 +8,11 @@ pages_blueprint = Blueprint('pages', __name__)
 
 @pages_blueprint.route('/about')
 def about():
-    return render_template('index.html')
+    return render_template('about.html')
 
 @pages_blueprint.route('/contact')
 def contact():
-    return render_template('index2.html')
+    return render_template('contact.html')
 
 @pages_blueprint.route('/projects', methods=['GET', 'POST'])
 def projects():
