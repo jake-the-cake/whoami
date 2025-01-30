@@ -21,7 +21,7 @@
 	</div>
 </div>
 <div class="space row-10 column acenter max-width" id="contact-form">
-	<h3>Send Me A Message</h3>
+	<h3 class="yellow">Send Me A Message</h3>
 	{% with messages = get_flashed_messages() %}
 		{% if messages|length > 0 %}
 			{% for m in messages %}
@@ -35,7 +35,7 @@
 				{% endfor %}
 			</p>
 		{% endif %}
-		<form class="row-10 column" method="POST">
+		<form class="row-10 column acenter" method="POST">
 			{{ form.hidden_tag() }}
 			<div class="column">
 				{{ form.name.label }}
@@ -65,13 +65,7 @@
 		{% endif %}
 	{% endwith %}
 </div>
-<div class="section-teal" id="social-media">
-	
-</div>
-<div class="space row-10 column acenter max-width">
-	Link to About
-</div>
-<div class="section-magenta" id="information">
+<div class="section-magenta" id="social-media">
 	<div class="section-content row-10 column acenter">
 		<h3>Social Media Links</h3>
 		<p class="small">
@@ -89,6 +83,11 @@
 			Social buttons
 		</div>
 	</div>
+</div>
+<div class="space row-10 column acenter max-width">
+	Link to About
+</div>
+<div class="section-teal" id="information">
 </div>
 <div class="space row-10 column acenter max-width">
 	Link to Projects

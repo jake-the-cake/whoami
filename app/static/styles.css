@@ -69,6 +69,10 @@ h3 {
 	margin: 0;
 }
 
+h3.small {
+	font-size: 1rem !important;
+}
+
 p, span {
 	font-size: 1rem;
 	padding: 0;
@@ -241,7 +245,8 @@ select, input, textarea {
 }
 
 .alt-font {
-	font-family: cursive;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	font-weight: bolder;
 }
 
 .space {
@@ -252,12 +257,46 @@ select, input, textarea {
 	margin: 2rem auto;
 }
 
-.space h3 {
+.space h3,
+.section-content h3 {
+	--font-color: var(--dark);
+	--shadow-color: var(--light-dim);
 	margin: 0;
 	padding: 0;
 	font-size: 2rem;
-	color: var(--teal);
-	text-shadow: 2px 2px 0 var(--yellow-dim);
+	color: var(--font-color);
+	text-shadow: 1px 1px 0 var(--shadow-color);
+	text-align: center;
+}
+
+.note {
+	margin-block: 1rem;
+	letter-spacing: 1px;
+	font-size: .9rem;
+}
+
+h3.none {
+	--shadow-color: transparent;
+}
+
+h3.light {
+	--font-color: var(--light);
+	--shadow-color: var(--dark);
+}
+
+h3.teal {
+	--font-color: var(--teal);
+	--shadow-color: var(--magenta-dim);
+}
+
+h3.magenta {
+	--font-color: var(--magenta);
+	--shadow-color: var(--yellow-dim);
+}
+
+h3.yellow {
+	--font-color: var(--yellow);
+	--shadow-color: var(--teal-dim);
 }
 
 .space p {
@@ -288,7 +327,8 @@ select, input, textarea {
 	gap: 1rem;
 }
 
-.unflip {
+.unflip,
+.unflip-reverse {
 	flex-direction: column;
 }
 
@@ -401,9 +441,18 @@ select, input, textarea {
 	font-size: 1rem;
 }
 
+.icon-large {
+	width: 150px;
+	height: 150px;
+}
+
 @media screen and (max-width: 500px) {
 	.flip {
 		flex-direction: column;
+	}
+	
+	.unflip-reverse {
+		flex-direction: row-reverse !important;
 	}
 
 	.unflip {
@@ -418,6 +467,11 @@ select, input, textarea {
 	.acenter {
 		justify-content: center !important;
 		align-items: inherit;
+	}
+
+	.icon-large {
+		width: 50px;
+		height: 50px;
 	}
 
 	a button {
