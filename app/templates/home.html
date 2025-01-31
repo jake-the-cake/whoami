@@ -19,15 +19,15 @@
         <div class="row-10 unflip-reverse center">
             <h3 class="alt-font">Python</h3>
 						<svg class='icon-large' viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-							<rect x="" y="0" width="100" height="100" rx="10" fill="var(--dark)"/>
-							<rect x="2" y="2" width="96" height="96" rx="10" fill="var(--magenta)"/>
-							<rect x="5" y="5" width="90" height="90" rx="10" fill="var(--dark)"/>
+							<rect x="" y="0" width="100" height="100" rx="10" fill="var(--dark-half)"/>
+							<rect x="2" y="2" width="96" height="96" rx="9" fill="var(--magenta)"/>
+							<rect x="5" y="5" width="90" height="90" rx="8" fill="var(--dark-dim)"/>
 							<text x="15" y="70" style="font-size: 60px;" font-weight="bold" fill="var(--magenta)" font-family="Arial">Py</text>
 						</svg>
         </div>
 				<div class="row-10 column acenter">
 					<div class="column">
-						<h3 class="small">Top Libraries</h3>
+						<h3 class="small light">Top Libraries</h3>
 						<p class="small">
 							Flask, Django, PyMongo, Quiggle
 						</p>
@@ -41,11 +41,33 @@
 {% include 'components/github-promo.html' %}
 <div class='section-magenta'>
     <div class="section-content row-10 flip center max-width">
-        <div class="row-10 unflip center">
-            <h3 class="alt-font">Skills</h3>
-            <img src="{{ url_for('static', filename='test.jpg') }}" alt="Section image">
+        <div class="row-10 unflip-reverse center">
+            <h3 class="alt-font">JavaScript</h3>
+						<svg class='icon-large' viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+							<rect x="" y="0" width="100" height="100" rx="10" fill="var(--dark-half)"/>
+							<rect x="2" y="2" width="96" height="96" rx="9" fill="url(#grad)"/>
+							<rect x="5" y="5" width="90" height="90" rx="8" fill="var(--dark-dim)"/>
+							<text x="30" y="45" style="font-size: 40px;" font-weight="bold" fill="var(--yellow)" font-family="Arial">Js</text>
+							<text x="30" y="85" style="font-size: 40px;" font-weight="bold" fill="var(--teal)" font-family="Arial">Ts</text>
+							<defs>
+								<linearGradient id="grad" gradientTransform="rotate(45)" x1="0%" x2="100%">
+									<stop offset="20%" stop-color="var(--yellow)" />
+									<stop offset="100%" stop-color="var(--teal)" />
+								</linearGradient>
+							</defs>
+						</svg>
         </div>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, iste provident ex obcaecati architecto, fugiat est non reprehenderit sint adipi.</p>
+				<div class="row-10 column acenter">
+					<div class="column">
+						<h3 class="small light">Top Libraries</h3>
+						<p class="small">
+							React, Express, Mongoose, NextJS
+						</p>
+					</div>
+					<p>
+						I began teaching myself Python in 2019 after a work injury, using W3Schools and YouTube as my main resources. After earning a MERN full-stack certification, I returned to Python for backend development, integrating it into my web applications, including <a href="/quiggle" class="link-yellow" target="_blank">Quiggle</a>.
+					</p>
+				</div>
     </div>
 </div>
 {% endblock %}
