@@ -96,6 +96,14 @@ select, input, textarea {
 	font-weight: 700;
 }
 
+nav {
+	margin-block: -1rem;
+}
+
+footer {
+	padding-inline: 1rem;
+}
+
 #change-form {
 	height: 100%;
 }
@@ -110,6 +118,8 @@ select, input, textarea {
 	height: 100%;
 }
 
+.link-dark,
+.link-light,
 .link-teal,
 .link-magenta,
 .link-yellow {
@@ -145,6 +155,21 @@ select, input, textarea {
 	--color: var(--yellow-dim);
 }
 
+.link-dark {
+	--color: var(--dark);
+}
+
+.link-dark:hover {
+	--color: var(--dark-dim);
+}
+
+.link-light {
+	--color: var(--light);
+}
+
+.link-light:hover {
+	--color: var(--light-dim);
+}
 .max-width {
 	width: 75%;
 	max-width: 600px;
@@ -188,7 +213,7 @@ select, input, textarea {
 	display: flex;
 	justify-content: center;
 	overflow: hidden;
-	padding: 1rem;
+	padding-block: 2rem;
 	position: relative;
 	width: 100vw;
 }
@@ -254,7 +279,7 @@ select, input, textarea {
 	color: var(--light);
 	display: flex;
 	justify-content: center;
-	margin: 2rem auto;
+	margin: 3rem auto;
 }
 
 .space h3,
@@ -322,10 +347,21 @@ h3.yellow {
 	text-align: center;
 }
 
+.row-05 {
+	display: flex;
+	gap: .5rem;
+}
+
 .row-10 {
 	display: flex;
 	gap: 1rem;
 }
+
+.row-20 {
+	display: flex;
+	gap: 2rem;
+}
+
 
 .unflip,
 .unflip-reverse {
@@ -350,6 +386,10 @@ h3.yellow {
 	justify-content: center;
 }
 
+.fit {
+	min-width: fit-content;
+}
+
 .flip {
 	display: flex;
 }
@@ -365,7 +405,7 @@ h3.yellow {
     font-size: 1.2rem;
     font-weight: bold;
     color: var(--accentcolor);
-    text-shadow: 1px 1px 0 var(--dark-dim);
+    text-shadow: 1px 1px 0 var(--dark-half);
     background-color: var(--bgcolor);
     padding: 0.5rem 2rem;
     border: 1px solid var(--accentcolor);
@@ -407,7 +447,7 @@ h3.yellow {
 .btn-teal-outline,
 .btn-magenta-outline,
 .btn-yellow-outline {
-    text-shadow: 1px 1px 0 var(--light-half);
+    text-shadow: 1px 1px 0 var(--light-trans);
 		--bgcolor: var(--dark-dim);
 		--hovercolor: var(--dark);
 }
@@ -422,6 +462,10 @@ h3.yellow {
 
 .btn-yellow-outline {
 	--accentcolor: var(--yellow-dim);
+}
+
+.bold {
+	font-weight: 900;
 }
 
 .status {
@@ -446,6 +490,10 @@ h3.yellow {
 .icon-large {
 	width: 150px;
 	height: 150px;
+}
+
+.wrap {
+	 flex-wrap: wrap;
 }
 
 @media screen and (max-width: 500px) {
@@ -476,6 +524,10 @@ h3.yellow {
 		height: 50px;
 	}
 
+	.inline-10 {
+		padding-inline: 1rem;
+	}
+
 	a button {
 		font-size: .8rem !important;
 	}
@@ -486,5 +538,18 @@ h3.yellow {
 
 	* {
 		font-size: .7em;
+	}
+	.section-teal::after,
+	.section-magenta::after,
+	.section-yellow::after {
+		width: 180%;
+		top: -5%; left: -40%;
+		rotate: -5deg;
+		border-radius: 40%;
+	}
+	.section-teal,
+	.section-magenta,
+	.section-yellow {
+		border-width: 2px;
 	}
 }

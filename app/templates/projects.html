@@ -9,10 +9,15 @@
 		This gallery showcases applications, components, and web design concepts, all created solely to demonstrate my skills.
 	</p>
 	<div class="row-10 jcenter flip">
-		<button class="btn-magenta">Apps</button>
-		<button class="btn-magenta">Components</button>
-		<button class="btn-magenta">Concepts</button>
-		<button class="btn-yellow">GitHub</button>
+		<a href="#comps">
+			<button class="btn-teal-outline">Components</button>
+		</a>
+		<a href="#designs">
+			<button class="btn-yellow-outline">Concepts</button>
+		</a>
+		<a href="#apps">
+			<button class="btn-magenta-outline">Apps</button>
+		</a>
 	</div>
 </div>
 {% include 'components/github-promo.html' %}
@@ -31,7 +36,7 @@
 	</div>
 </div>
 {% include 'components/login-app.html' %}
-<div class="section-magenta">
+<div class="section-magenta" id="apps">
 	<div class="section-content row-10 column acenter max-width">
 		<h3>Apps & Games</h3>
 		<p class="small">
@@ -53,7 +58,7 @@
 	</div>
 	{% endfor %}
 </div>
-<div class="section-teal">
+<div class="section-teal" id="comps">
 	<div class="section-content row-10 column acenter max-width">
 		<h3>Components</h3>
 		<p class="small">
@@ -75,7 +80,7 @@
 	</div>
 	{% endfor %}
 </div>
-<div class="section-yellow">
+<div class="section-yellow" id="designs">
 	<div class="section-content row-10 column acenter max-width">
 		<h3>Design Concepts</h3>
 		<p class="small">

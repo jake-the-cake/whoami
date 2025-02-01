@@ -20,7 +20,7 @@
 		</a>
 	</div>
 </div>
-<div class="space row-10 column acenter max-width" id="contact-form">
+<div class="space row-20 column acenter max-width" id="contact-form">
 	<h3 class="yellow">Send Me A Message</h3>
 	{% with messages = get_flashed_messages() %}
 		{% if messages|length > 0 %}
@@ -35,7 +35,7 @@
 				{% endfor %}
 			</p>
 		{% endif %}
-		<form class="row-10 column acenter" method="POST">
+		<form class="row-20 column acenter" method="POST">
 			{{ form.hidden_tag() }}
 			<div class="column">
 				{{ form.name.label }}
