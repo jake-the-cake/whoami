@@ -404,22 +404,24 @@ h3.yellow {
     --hovercolor: var(--magenta);
 }
 
+.btn-teal-outline,
+.btn-magenta-outline,
+.btn-yellow-outline {
+    text-shadow: 1px 1px 0 var(--light-half);
+		--bgcolor: var(--dark-dim);
+		--hovercolor: var(--dark);
+}
+
 .btn-teal-outline {
-	--bgcolor: var(--dark-dim);
 	--accentcolor: var(--teal-dim);
-	--hovercolor: var(--dark);
 }
 
 .btn-magenta-outline {
-	--bgcolor: var(--dark-dim);
 	--accentcolor: var(--magenta-dim);
-	--hovercolor: var(--dark);
 }
 
 .btn-yellow-outline {
-	--bgcolor: var(--dark-dim);
 	--accentcolor: var(--yellow-dim);
-	--hovercolor: var(--dark);
 }
 
 .status {

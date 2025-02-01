@@ -9,20 +9,28 @@
     <p>
         I've had a passion for designing websites and solving tough problems through code since childhood. I'm quick to learn, eager to grow, and always looking for ways to improve. For me, it’s all about creating something functional, unique, and meaningful.
     </p>
-    <a href="/projects">
-        <button class="btn-yellow">View My Work</button>
-    </a>
+		<div class="row-10 flip jcenter">
+			<a href="/projects">
+					<button class="btn-yellow-outline">View My Work</button>
+			</a>
+			<a href="#python">
+					<button class="btn-teal-outline">Python</button>
+			</a>
+			<a href="#javascript">
+					<button class="btn-magenta-outline">JavaScript</button>
+			</a>
+		</div>
 </div>
 {% include 'components/github-promo.html' %}
-<div class='section-teal'>
+<div class='section-teal' id="python">
     <div class="section-content row-10 flip center max-width">
         <div class="row-10 unflip-reverse center">
             <h3 class="alt-font">Python</h3>
 						<svg class='icon-large' viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
 							<rect x="" y="0" width="100" height="100" rx="10" fill="var(--dark-half)"/>
 							<rect x="2" y="2" width="96" height="96" rx="9" fill="var(--magenta)"/>
-							<rect x="5" y="5" width="90" height="90" rx="8" fill="var(--dark-dim)"/>
-							<text x="15" y="70" style="font-size: 60px;" font-weight="bold" fill="var(--magenta)" font-family="Arial">Py</text>
+							<rect x="5" y="5" width="90" height="90" rx="8" fill="var(--dark-trans)"/>
+							<text x="15" y="70" style="font-size: 60px;" font-weight="bold" fill="var(--dark)" font-family="Arial">Py</text>
 						</svg>
         </div>
 				<div class="row-10 column acenter">
@@ -39,16 +47,16 @@
     </div>
 </div>
 {% include 'components/github-promo.html' %}
-<div class='section-magenta'>
+<div class='section-magenta' id="javascript">
     <div class="section-content row-10 flip center max-width">
         <div class="row-10 unflip-reverse center">
             <h3 class="alt-font">JavaScript</h3>
 						<svg class='icon-large' viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
 							<rect x="" y="0" width="100" height="100" rx="10" fill="var(--dark-half)"/>
 							<rect x="2" y="2" width="96" height="96" rx="9" fill="url(#grad)"/>
-							<rect x="5" y="5" width="90" height="90" rx="8" fill="var(--dark-dim)"/>
-							<text x="30" y="45" style="font-size: 40px;" font-weight="bold" fill="var(--yellow)" font-family="Arial">Js</text>
-							<text x="30" y="85" style="font-size: 40px;" font-weight="bold" fill="var(--teal)" font-family="Arial">Ts</text>
+							<rect x="5" y="5" width="90" height="90" rx="8" fill="var(--dark-trans)"/>
+							<text x="10" y="45" style="font-size: 45px;" font-weight="bold" fill="var(--dark)" font-family="Arial">Js</text>
+							<text x="40" y="85" style="font-size: 45px;" font-weight="bold" fill="var(--dark)" font-family="Arial">Ts</text>
 							<defs>
 								<linearGradient id="grad" gradientTransform="rotate(45)" x1="0%" x2="100%">
 									<stop offset="20%" stop-color="var(--yellow)" />
@@ -61,11 +69,11 @@
 					<div class="column">
 						<h3 class="small light">Top Libraries</h3>
 						<p class="small">
-							React, Express, Mongoose, NextJS
+							React, Express, Mongoose, NextJS, TypeScript
 						</p>
 					</div>
 					<p>
-						I began teaching myself Python in 2019 after a work injury, using W3Schools and YouTube as my main resources. After earning a MERN full-stack certification, I returned to Python for backend development, integrating it into my web applications, including <a href="/quiggle" class="link-yellow" target="_blank">Quiggle</a>.
+						I first learned HTML making my first website in 1997, picked up CSS a little later, and finally dove into JavaScript in 2019 before earning my MERN full-stack certification. Since then, I’ve continued expanding my skills through free online resources, developing a strong grasp of Node.js and its ecosystem. While I prefer writing vanilla JavaScript, I use TypeScript when working with Node to refine my skills. I enjoy replicating library functionality, 	experimenting with dynamic components, and pushing the limits of what I can do with JavaScript.
 					</p>
 				</div>
     </div>
