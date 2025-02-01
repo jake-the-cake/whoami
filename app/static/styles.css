@@ -433,23 +433,23 @@ h3.yellow {
 }
 
 .btn-yellow {
-    --bgcolor: var(--yellow-dim);
-    --accentcolor: var(--teal-dim);
-    --hovercolor: var(--yellow);
+	--bgcolor: var(--yellow-dim);
+	--accentcolor: var(--teal-dim);
+	--hovercolor: var(--yellow);
 }
 
 .btn-magenta {
-    --bgcolor: var(--magenta-dim);
-    --accentcolor: var(--yellow-dim);
-    --hovercolor: var(--magenta);
+	--bgcolor: var(--magenta-dim);
+	--accentcolor: var(--yellow-dim);
+	--hovercolor: var(--magenta);
 }
 
 .btn-teal-outline,
 .btn-magenta-outline,
 .btn-yellow-outline {
-    text-shadow: 1px 1px 0 var(--light-trans);
-		--bgcolor: var(--dark-dim);
-		--hovercolor: var(--dark);
+	text-shadow: 1px 1px 0 var(--light-trans);
+	--bgcolor: var(--dark-dim);
+	--hovercolor: var(--dark);
 }
 
 .btn-teal-outline {
