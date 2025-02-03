@@ -7,21 +7,29 @@
 	--magenta-sat: 95%;
 	--yellow-sat: 100%;
 
-	--teal: hsl(var(--teal-hue), var(--teal-sat), 30%);
-	--magenta: hsl(var(--magenta-hue), var(--magenta-sat), 45%);
-	--yellow: hsl(var(--yellow-hue), var(--yellow-sat), 55%);
+	--teal-lit: 40%;
+	--magenta-lit: 45%;
+	--yellow-lit: 50%;
 
-	--teal-dim: hsl(var(--teal-hue), var(--teal-sat), 30%, .8);
-	--magenta-dim: hsl(var(--magenta-hue), var(--magenta-sat), 45%, .8);
-	--yellow-dim: hsl(var(--yellow-hue), var(--yellow-sat), 55%, .8);
+	--teal-hsl: var(--teal-hue), var(--teal-sat), var(--teal-lit);
+	--magenta-hsl: var(--magenta-hue), var(--magenta-sat), var(--magenta-lit);
+	--yellow-hsl: var(--yellow-hue), var(--yellow-sat), var(--yellow-lit);
 
-	--teal-half: hsl(var(--teal-hue), var(--teal-sat), 30%, .5);
-	--magenta-half: hsl(var(--magenta-hue), var(--magenta-sat), 45%, .5);
-	--yellow-half: hsl(var(--yellow-hue), var(--yellow-sat), 55%, .5);
+	--teal: hsl(var(--teal-hsl));
+	--magenta: hsl(var(--magenta-hsl));
+	--yellow: hsl(var(--yellow-hsl));
 
-	--teal-trans: hsl(var(--teal-hue), var(--teal-sat), 30%, .2);
-	--magenta-trans: hsl(var(--magenta-hue), var(--magenta-sat), 45%, .2);
-	--yellow-trans: hsl(var(--yellow-hue), var(--yellow-sat), 55%, .2);
+	--teal-dim: hsl(var(--teal-hsl), .8);
+	--magenta-dim: hsl(var(--magenta-hsl), .8);
+	--yellow-dim: hsl(var(--yellow-hsl), .8);
+
+	--teal-half: hsl(var(--teal-hsl), .5);
+	--magenta-half: hsl(var(--magenta-hsl), .5);
+	--yellow-half: hsl(var(--yellow-hsl), .5);
+	
+	--teal-trans: hsl(var(--teal-hsl), .2);
+	--magenta-trans: hsl(var(--magenta-hsl), .2);
+	--yellow-trans: hsl(var(--yellow-hsl), .2);
 
 	--shadow: 4px 4px 0 var(--yellow-dim);
 	--shadow-light: 4px 4px 0 var(--yellow-trans);
