@@ -3,8 +3,16 @@ from app.forms import RegistrationForm, LoginForm, ContactForm
 from app.models import parse_choices, new_message
 from app import mongo
 
-
 pages_blueprint = Blueprint('pages', __name__)
+
+def use_contact_form():
+	form = ContactForm()
+	if form.validate_on_submit():
+		if not form.errors:
+			flash('Thank you for your message. I will get back to you shortly!')
+			new_message(request.form)
+		return redirect(request.referrer)
+	return form
 
 @pages_blueprint.route('/about')
 def about():
@@ -12,13 +20,8 @@ def about():
 
 @pages_blueprint.route('/contact', methods=['GET', 'POST'])
 def contact():
-		form = ContactForm()
-		if form.validate_on_submit():
-			if not form.errors:
-				flash('Thank you for your message. I will get back to you shortly!')
-				new_message(request.form)
-			return redirect(request.referrer)
-		return render_template('contact.html', form=form)
+	form = use_contact_form()
+	return render_template('contact.html', form=form)
 
 @pages_blueprint.route('/projects', methods=['GET', 'POST'])
 def projects():
@@ -35,7 +38,8 @@ def projects():
 
 @pages_blueprint.route('/')
 def home():
-    return render_template('home.html')
+	form = use_contact_form()	
+	return render_template('home.html', form=form)
 
 @pages_blueprint.route('/data')
 def data():
