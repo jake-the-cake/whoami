@@ -308,6 +308,10 @@ footer {
 	font-size: .9rem;
 }
 
+.closed p {
+	display: none;
+}
+
 h3.none {
 	--shadow-color: transparent;
 }

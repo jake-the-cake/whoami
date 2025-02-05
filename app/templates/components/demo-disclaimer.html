@@ -1,0 +1,31 @@
+<div class='section-teal' id="demo-disclaimer">
+	<div class="section-content row-10 column acenter max-width {% if closed %}closed{% endif %}">
+		<h3>Demo Disclaimer</h3>
+		<a href="#" class="link-light bold">
+			{% if closed %}
+				Show More
+			{% else %}
+				Show Less
+			{% endif %}
+		</a>
+		<p class="small">
+			The projects and applications showcased on this portfolio are for demonstration purposes only. These live demos are intended to highlight my skills and capabilities as a developer. Some demos may include basic authorization features, such as user profiles to track scores, statistics, and progress. These profiles are for simulation purposes only and can be accessed at any time by the user.
+		</p>
+		<p class="small">
+			To ensure security, users are advised not to use common or personal passwords when interacting with these demos. You are welcome to use fake email addresses for testing purposes, as no email verification or real-world communication will occur.
+		</p>
+		<p class="small">
+			No sensitive data should be submitted, and no data collected through these demos is used for monetary or commercial purposes. While every effort is made to provide a secure experience, the applications are not intended for real-world deployment. Please use them responsibly and with the understanding that they are works in progress.
+		</p>
+		<script>
+			element = document.querySelector('#demo-disclaimer').children[0]
+			link = element.querySelector('a')
+			link.onclick = (e) => {
+				e.preventDefault()
+				element.classList.toggle('closed')
+				const show = 'Show '
+				link.innerText = show + ['More', 'Less'].filter(text => text != link.innerText.replace(show, ''))[0]
+			}
+		</script>
+	</div>
+</div>
