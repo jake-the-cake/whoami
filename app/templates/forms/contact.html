@@ -1,0 +1,45 @@
+<div class="space row-20 column acenter max-width" id="contact-form">
+	<h3 class="yellow">Send Me A Message</h3>
+	{% with messages = get_flashed_messages() %}
+		{% if messages|length > 0 %}
+			{% for m in messages %}
+			<p class="small">{{ m }}</p>
+			{% endfor %}
+		{% else %}
+		{% if form.email.errors %}
+			<p class="small">
+				{% for error in form.email.errors %}
+					{{ error }}
+				{% endfor %}
+			</p>
+		{% endif %}
+		<form class="row-20 column acenter" method="POST">
+			{{ form.hidden_tag() }}
+			<div class="column">
+				{{ form.name.label }}
+				{{ form.name }}
+			</div>
+			<div class="column">
+				{{ form.email.label }}
+				{{ form.email }}
+			</div>
+			<div class="column">
+				{{ form.message.label }}
+				{{ form.message(rows="6") }}
+			</div>
+			<div class="row-10 jcenter">
+				{{ form.submit(class='btn-magenta') }}
+				<button class="btn-magenta-outline" id="clear-form-button">Clear</button>
+			</div>
+		</form>
+		<script>
+			const form = document.querySelector('#contact-form').querySelector('form')
+			const clearButton = form.querySelector('#clear-form-button')
+			clearButton.addEventListener('click', (e) => {
+				e.preventDefault()
+				form.reset()
+			})
+		</script>
+		{% endif %}
+	{% endwith %}
+</div>
