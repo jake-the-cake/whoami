@@ -1,0 +1,12 @@
+{% for project in projects %}
+<div class="project-card">
+	<div class="row-10">
+		<img src="{{ project.img }}" alt="Sample Image">
+		<div class="column">
+			<div class="title">{{ project.title }}</div>
+			<div class="desc">{{ project.desc }}</div>
+			<a href="{{ project.url }}">View Demo</a>
+		</div>
+	</div>
+</div>
+{% endfor %}

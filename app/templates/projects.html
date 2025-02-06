@@ -32,18 +32,9 @@
 	</div>
 </div>
 <div class="space row-10 column max-width">
-	{% for app in apps %}
-	<div class="project">
-		<div class="row-10">
-			<img src="{{ app.img }}" alt="Sample Image">
-			<div class="column">
-				<div class="title">{{ app.title }}</div>
-				<div class="project-desc">{{ app.desc }}</div>
-				<a href="{{ app.url }}">View Demo</a>
-			</div>
-		</div>
-	</div>
-	{% endfor %}
+	{% with projects=apps %}
+		{% include 'components/project-list.html' %}
+	{% endwith %}
 </div>
 <div class="section-teal" id="comps">
 	<div class="section-content row-10 column acenter max-width">
@@ -54,18 +45,9 @@
 	</div>
 </div>
 <div class="space">
-	{% for comp in components %}
-	<div class="project">
-		<div class="row-10">
-			<img src="{{ comp.img }}" alt="Sample Image">
-			<div class="column">
-				<div class="title">{{ comp.title }}</div>
-				<div class="project-desc">{{ comp.desc }}</div>
-				<a href="{{ comp.url }}">View Demo</a>
-			</div>
-		</div>
-	</div>
-	{% endfor %}
+	{% with projects=components %}
+		{% include 'components/project-list.html' %}
+	{% endwith %}
 </div>
 <div class="section-yellow" id="designs">
 	<div class="section-content row-10 column acenter max-width">
@@ -76,17 +58,8 @@
 	</div>
 </div>
 <div class="space">
-	{% for concept in concepts %}
-	<div class="project">
-		<div class="row-10">
-			<img src="{{ concept.img }}" alt="Sample Image">
-			<div class="column">
-				<div class="title">{{ concept.title }}</div>
-				<div class="project-desc">{{ concept.desc }}</div>
-				<a href="{{ concept.url }}">View Demo</a>
-			</div>
-		</div>
-	</div>
-	{% endfor %}
+	{% with projects=concepts %}
+		{% include 'components/project-list.html' %}
+	{% endwith %}
 </div>
 {% endblock %}
