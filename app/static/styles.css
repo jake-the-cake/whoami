@@ -132,9 +132,9 @@ footer {
 .link-magenta,
 .link-yellow {
 	--color: var(--light);
-	text-decoration: underline;
-	font-variant: small-caps;
-	color: var(--color);
+	text-decoration: underline !important;
+	font-variant: small-caps !important;
+	color: var(--color) !important;
 	transition: .2s color;
 	cursor: pointer;
 }
@@ -144,7 +144,7 @@ footer {
 }
 
 .link-teal:hover {
-	--color: var(--teal-dim);
+	--color: var(--teal-dim) !important;
 }
 
 .link-magenta {
@@ -152,7 +152,7 @@ footer {
 }
 
 .link-magenta:hover {
-	--color: var(--magenta-dim);
+	--color: var(--magenta-dim) !important;
 }
 
 .link-yellow {
@@ -160,7 +160,7 @@ footer {
 }
 
 .link-yellow:hover {
-	--color: var(--yellow-dim);
+	--color: var(--yellow-dim !important);
 }
 
 .link-dark {
@@ -168,7 +168,7 @@ footer {
 }
 
 .link-dark:hover {
-	--color: var(--dark-dim);
+	--color: var(--dark-dim) !important;
 }
 
 .link-light {
@@ -176,7 +176,7 @@ footer {
 }
 
 .link-light:hover {
-	--color: var(--light-dim);
+	--color: var(--light-dim) !important;
 }
 .max-width {
 	width: 75%;
@@ -506,6 +506,11 @@ h3.yellow {
 
 .wrap {
 	 flex-wrap: wrap;
+}
+
+.no-btn {
+	all: unset;
+	cursor: pointer;
 }
 
 @media screen and (max-width: 500px) {

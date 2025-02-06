@@ -1,5 +1,5 @@
 <div class="space row-20 column acenter max-width" id="contact-form">
-	<h3 class="yellow">Send Me A Message</h3>
+	<h3 class="teal">Send Me A Message</h3>
 	{% with messages = get_flashed_messages() %}
 		{% if messages|length > 0 %}
 			{% for m in messages %}
@@ -28,8 +28,8 @@
 				{{ form.message(rows="6") }}
 			</div>
 			<div class="row-10 jcenter">
-				{{ form.submit(class='btn-magenta') }}
-				<button class="btn-magenta-outline" id="clear-form-button">Clear</button>
+				{{ form.submit(class='btn-teal') }}
+				<button class="no-btn link-teal" id="clear-form-button">Clear</button>
 			</div>
 		</form>
 		<script>
