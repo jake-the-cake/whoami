@@ -290,6 +290,12 @@ footer {
 	margin: 3rem auto;
 }
 
+.space span {
+  text-align: center;
+  letter-spacing: 1.2px;
+  font-size: .9rem;
+}
+
 .space h3,
 .section-content h3 {
 	--font-color: var(--dark);
