@@ -1,15 +1,15 @@
 :root {
-	--teal-hue: 199;
-	--magenta-hue: 149;
-	--yellow-hue: 99;
+	--teal-hue: 125;
+	--magenta-hue: 344;
+	--yellow-hue: 212;
 
-	--teal-sat: 41%;
-	--magenta-sat: 44%;
-	--yellow-sat: 50%;
+	--teal-sat: 44%;
+	--magenta-sat: 46%;
+	--yellow-sat: 49%;
 
-	--teal-lit: 60%;
+	--teal-lit: 65%;
 	--magenta-lit: 55%;
-	--yellow-lit: 57%;
+	--yellow-lit: 45%;
 
 	--teal-hsl: var(--teal-hue), var(--teal-sat), var(--teal-lit);
 	--magenta-hsl: var(--magenta-hue), var(--magenta-sat), var(--magenta-lit);
@@ -43,10 +43,6 @@
 	--dark-trans: hsl(0, 0%, 5%, .2);
 	--dark-half: hsl(0, 0%, 5%, .5);
 	--dark-dim: hsl(0, 0%, 5%, .8);
-}
-
-.f {
-	background-color: hsl(199, 29%, 57%);
 }
 
 * {
@@ -580,10 +576,4 @@ h3.yellow {
 	.section-yellow {
 		border-width: 2px;
 	}
-}
-
-.testing {
-	background-color: hsl(199, 30%, 59%);
-	width: 50px;
-	height: 50px;
 }
