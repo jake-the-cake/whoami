@@ -1,15 +1,15 @@
 :root {
-	--teal-hue: 180;
-	--magenta-hue: 300;
-	--yellow-hue: 60;
+	--teal-hue: 199;
+	--magenta-hue: 149;
+	--yellow-hue: 99;
 
-	--teal-sat: 100%;
-	--magenta-sat: 95%;
-	--yellow-sat: 100%;
+	--teal-sat: 41%;
+	--magenta-sat: 44%;
+	--yellow-sat: 50%;
 
-	--teal-lit: 40%;
-	--magenta-lit: 45%;
-	--yellow-lit: 50%;
+	--teal-lit: 60%;
+	--magenta-lit: 55%;
+	--yellow-lit: 57%;
 
 	--teal-hsl: var(--teal-hue), var(--teal-sat), var(--teal-lit);
 	--magenta-hsl: var(--magenta-hue), var(--magenta-sat), var(--magenta-lit);
@@ -43,6 +43,10 @@
 	--dark-trans: hsl(0, 0%, 5%, .2);
 	--dark-half: hsl(0, 0%, 5%, .5);
 	--dark-dim: hsl(0, 0%, 5%, .8);
+}
+
+.f {
+	background-color: hsl(199, 29%, 57%);
 }
 
 * {
@@ -423,7 +427,7 @@ h3.yellow {
     font-size: 1.2rem;
     font-weight: bold;
     color: var(--accentcolor);
-    text-shadow: 1px 1px 0 var(--dark-half);
+    /* text-shadow: 1px 1px 0 var(--dark-half); */
     background-color: var(--bgcolor);
     padding: 0.5rem 2rem;
     border: 1px solid var(--accentcolor);
@@ -465,7 +469,7 @@ h3.yellow {
 .btn-teal-outline,
 .btn-magenta-outline,
 .btn-yellow-outline {
-	text-shadow: 1px 1px 0 var(--light-trans);
+	/* text-shadow: 1px 1px 0 var(--light-trans); */
 	--bgcolor: var(--dark-dim);
 	--hovercolor: var(--dark);
 }
@@ -576,4 +580,10 @@ h3.yellow {
 	.section-yellow {
 		border-width: 2px;
 	}
+}
+
+.testing {
+	background-color: hsl(199, 30%, 59%);
+	width: 50px;
+	height: 50px;
 }
