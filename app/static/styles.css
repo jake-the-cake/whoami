@@ -1,19 +1,23 @@
 :root {
-	--teal-hue: 125;
+	--teal-hue: 212;
 	--magenta-hue: 344;
-	--yellow-hue: 212;
+	--yellow-hue: 125;
 
 	--teal-sat: 44%;
 	--magenta-sat: 46%;
 	--yellow-sat: 49%;
 
 	--teal-lit: 65%;
-	--magenta-lit: 55%;
+	--magenta-lit: 50%;
 	--yellow-lit: 45%;
 
 	--teal-hsl: var(--teal-hue), var(--teal-sat), var(--teal-lit);
 	--magenta-hsl: var(--magenta-hue), var(--magenta-sat), var(--magenta-lit);
 	--yellow-hsl: var(--yellow-hue), var(--yellow-sat), var(--yellow-lit);
+	
+	--teal-dark: hsl(var(--teal-hue), var(--teal-sat), 20%);
+	--magenta-dark: hsl(var(--magenta-hue), var(--magenta-sat), 20%);
+	--yellow-dark: hsl(var(--yellow-hue), var(--yellow-sat), 20%);
 
 	--teal: hsl(var(--teal-hsl));
 	--magenta: hsl(var(--magenta-hsl));
@@ -31,8 +35,8 @@
 	--magenta-trans: hsl(var(--magenta-hsl), .2);
 	--yellow-trans: hsl(var(--yellow-hsl), .2);
 
-	--shadow: 4px 4px 0 var(--yellow-dim);
-	--shadow-light: 4px 4px 0 var(--yellow-trans);
+	--shadow: 4px 4px 0 var(--light-half);
+	--shadow-light: 4px 4px 0 var(--light-half);
 
 	--light: hsl(0, 0%, 95%);
 	--light-trans: hsl(0, 0%, 95%, .2);
@@ -132,11 +136,13 @@ footer {
 .link-magenta,
 .link-yellow {
 	--color: var(--light);
+	--shadow-color: var(--dark-dim);
 	text-decoration: underline !important;
 	font-variant: small-caps !important;
 	color: var(--color) !important;
 	transition: .2s color;
 	cursor: pointer;
+	text-shadow: 1px 1px 0 var(--shadow-color);
 }
 
 .link-teal {
@@ -165,6 +171,7 @@ footer {
 
 .link-dark {
 	--color: var(--dark);
+	--shadow-color: var(--light-dim);
 }
 
 .link-dark:hover {
@@ -178,6 +185,7 @@ footer {
 .link-light:hover {
 	--color: var(--light-dim) !important;
 }
+
 .max-width {
 	width: 75%;
 	max-width: 600px;
@@ -304,7 +312,7 @@ footer {
 	padding: 0;
 	font-size: 2rem;
 	color: var(--font-color);
-	text-shadow: 1px 1px 0 var(--shadow-color);
+	text-shadow: 2px 2px 0 var(--shadow-color);
 	text-align: center;
 }
 
@@ -329,17 +337,17 @@ h3.light {
 
 h3.teal {
 	--font-color: var(--teal);
-	--shadow-color: var(--magenta-dim);
+	--shadow-color: var(--teal-dark);
 }
 
 h3.magenta {
 	--font-color: var(--magenta);
-	--shadow-color: var(--yellow-dim);
+	--shadow-color: var(--magenta-dark);
 }
 
 h3.yellow {
 	--font-color: var(--yellow);
-	--shadow-color: var(--teal-dim);
+	--shadow-color: var(--yellow-dark);
 }
 
 .space p {
@@ -422,8 +430,7 @@ h3.yellow {
     display: inline-block;
     font-size: 1.2rem;
     font-weight: bold;
-    color: var(--accentcolor);
-    /* text-shadow: 1px 1px 0 var(--dark-half); */
+    color: var(--textcolor);
     background-color: var(--bgcolor);
     padding: 0.5rem 2rem;
     border: 1px solid var(--accentcolor);
@@ -445,18 +452,21 @@ h3.yellow {
 }
 
 .btn-teal {
-    --bgcolor: var(--teal-dim);
-    --accentcolor: var(--magenta-dim);
-    --hovercolor: var(--teal);
+	--textcolor: var(--teal-dark);
+	--bgcolor: var(--teal-dim);
+	--accentcolor: var(--magenta-dim);
+	--hovercolor: var(--teal);
 }
 
 .btn-yellow {
+	--textcolor: var(--yellow-dark);
 	--bgcolor: var(--yellow-dim);
 	--accentcolor: var(--teal-dim);
 	--hovercolor: var(--yellow);
 }
 
 .btn-magenta {
+	--textcolor: var(--magenta-dark);
 	--bgcolor: var(--magenta-dim);
 	--accentcolor: var(--yellow-dim);
 	--hovercolor: var(--magenta);
@@ -468,6 +478,7 @@ h3.yellow {
 	/* text-shadow: 1px 1px 0 var(--light-trans); */
 	--bgcolor: var(--dark-dim);
 	--hovercolor: var(--dark);
+	--textcolor: var(--accentcolor);
 }
 
 .btn-teal-outline {
