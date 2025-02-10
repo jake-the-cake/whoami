@@ -1,14 +1,14 @@
 :root {
 	--teal-hue: 212;
-	--magenta-hue: 344;
+	--magenta-hue: 334;
 	--yellow-hue: 125;
 
-	--teal-sat: 44%;
+	--teal-sat: 49%;
 	--magenta-sat: 46%;
-	--yellow-sat: 49%;
+	--yellow-sat: 44%;
 
-	--teal-lit: 65%;
-	--magenta-lit: 50%;
+	--teal-lit: 61%;
+	--magenta-lit: 49%;
 	--yellow-lit: 45%;
 
 	--teal-hsl: var(--teal-hue), var(--teal-sat), var(--teal-lit);
@@ -136,17 +136,15 @@ footer {
 .link-magenta,
 .link-yellow {
 	--color: var(--light);
-	--shadow-color: var(--dark-dim);
 	text-decoration: underline !important;
 	font-variant: small-caps !important;
 	color: var(--color) !important;
 	transition: .2s color;
 	cursor: pointer;
-	text-shadow: 1px 1px 0 var(--shadow-color);
 }
 
 .link-teal {
-	--color: var(--teal);
+	--color: var(--teal-dark);
 }
 
 .link-teal:hover {
@@ -154,7 +152,7 @@ footer {
 }
 
 .link-magenta {
-	--color: var(--magenta);
+	--color: var(--magenta-dark);
 }
 
 .link-magenta:hover {
@@ -162,16 +160,29 @@ footer {
 }
 
 .link-yellow {
+	--color: var(--yellow-dark);
+}
+
+.space .link-teal {
+	--color: var(--teal);
+}
+
+.space .link-magenta {
+	--color: var(--magenta);
+}
+
+.space .link-yellow {
 	--color: var(--yellow);
 }
 
+
 .link-yellow:hover {
-	--color: var(--yellow-dim !important);
+	--color: var(--yellow-dim) !important;
 }
 
 .link-dark {
 	--color: var(--dark);
-	--shadow-color: var(--light-dim);
+	/* --shadow-color: var(--light-trans); */
 }
 
 .link-dark:hover {
@@ -327,7 +338,7 @@ footer {
 }
 
 h3.none {
-	--shadow-color: transparent;
+	--shadow-color: transparent !important;
 }
 
 h3.light {
