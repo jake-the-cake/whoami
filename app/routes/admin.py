@@ -15,7 +15,7 @@ def add_project():
       request.form.get('img'),
       request.form.get('category')
 		)
-    flash(f'New project "{ project['title'] }" added to { parse_choices(project['category']) }.')
+    flash(f'New project "{ project["title"] }" added to { parse_choices(project["category"]) }.')
     return redirect(request.referrer)
   return render_template('/admin/new-project.html', form=form)
 
